@@ -10,11 +10,11 @@ public class BulletHit : MonoBehaviour{
 
     void OnCollisionEnter(Collision collision) {
         ContactPoint contact = collision.contacts[0];
-        if(collision.gameObject.tag == "Enemy" ) {
+        if(collision.gameObject.CompareTag("Enemy")) {
             Enemy target = collision.transform.gameObject.GetComponent<Enemy>();
             Instantiate(bloodEffect, contact.point, Quaternion.LookRotation(contact.normal));
             target.ApplyDamage(damage);
-        } else if(collision.gameObject.tag == "WallHit") {
+        } else if(collision.gameObject.CompareTag("WallHit")) {
             Instantiate(hitEffect, contact.point, Quaternion.LookRotation(contact.normal));
         }
         
