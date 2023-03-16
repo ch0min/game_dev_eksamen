@@ -17,7 +17,6 @@ public class BulletHit : MonoBehaviour{
         } else if(collision.gameObject.CompareTag("WallHit")) {
             Instantiate(hitEffect, contact.point, Quaternion.LookRotation(contact.normal));
         }
-        
         Destroy(gameObject);
     }
 }
