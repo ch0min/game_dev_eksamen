@@ -2,15 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour{ 
     public GameObject deadBody;
-    public float health = 100f;
+    private float health = 100f;
+    public Slider healthBar;
     bool created = false;
-    
-    
+
+    // [FormerlySerializedAs("_fieldOfView")]
+    public AIBehaviour _aiBehaviour;
+
+    void Update() {
+        healthBar.value = health;
+    }
+
     public void ApplyDamage(float amountDamage) {
         health -= Mathf.Abs(amountDamage);  // Might not need Mathf.Abs.
+        _aiBehaviour.ChasePlayer();
+        _aiBehaviour.canSeePlayer = true;
 
         if(health <= 0) {
             if(!created) {
@@ -25,13 +37,4 @@ public class Enemy : MonoBehaviour{
     public void Die() {
         Destroy(gameObject);
     }
-    
-    // void Die() {
-    //     rigidBody = GetComponent<Rigidbody>();
-    //     rigidBody.AddForce(-transform.forward * enemyForce);
-    //     rigidBody.mass = 20;
-    //     rigidBody.drag = 0.1f;
-    //     rigidBody.freezeRotation = false;
-    //
-    // }
 }
