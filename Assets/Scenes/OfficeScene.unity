@@ -12793,6 +12793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1398003203776479140, guid: 0ee63f9d5a48df1419a7b6d642d88113, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1398003203776479141, guid: 0ee63f9d5a48df1419a7b6d642d88113, type: 3}
       propertyPath: deadBody
       value: 
@@ -14774,10 +14778,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyForce: 1000
   explosionEffect: {fileID: 5292749912145050824, guid: e69217a5e7d02b58f92cc4465cc72a15, type: 3}
-  blastRadius: 100
+  blastRadius: 5
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1001 &1292356256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24255,6 +24259,10 @@ PrefabInstance:
     - target: {fileID: 1398003203776479140, guid: 0ee63f9d5a48df1419a7b6d642d88113, type: 3}
       propertyPath: m_Name
       value: Enemy 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398003203776479140, guid: 0ee63f9d5a48df1419a7b6d642d88113, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1398003203776479141, guid: 0ee63f9d5a48df1419a7b6d642d88113, type: 3}
       propertyPath: deadBody
