@@ -15,19 +15,18 @@ public class BarrelExplode : MonoBehaviour
     {
         if (!exploded)
         {
-            Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius, targetLayerMask);
+            //spawn explode effect
+            Destroy(Instantiate(explosionEffect, transform.position, Quaternion.identity), 2.0f);
 
             //kill enemys in blast radius
+            Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius, targetLayerMask);
             foreach (var o in objectsToExplode)
             {
                 if (o.CompareTag("Enemy"))
                 {
-                    o.gameObject.transform.gameObject.GetComponent<Enemy>().ApplyDamage(100);
+                    o.gameObject.GetComponent<Enemy>().ApplyDamage(100);
                 }
             }
-
-            //spawn explode effect
-            Destroy(Instantiate(explosionEffect, transform.position, Quaternion.identity), 2.0f);
 
             //make barrel move around
             rigidBody = GetComponent<Rigidbody>();
@@ -35,6 +34,9 @@ public class BarrelExplode : MonoBehaviour
             rigidBody.mass = 20;
             rigidBody.drag = 0.1f;
             rigidBody.freezeRotation = false;
+
+            //todo: change barrel color and/or something else to indicate that it has exploded
+
             exploded = true;
         }
     }
