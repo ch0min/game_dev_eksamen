@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - WallHit
+  - AssaultRiffle
+  - Shotgun
+  - Pistol
   layers:
   - Default
   - TransparentFX
