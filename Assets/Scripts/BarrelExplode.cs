@@ -16,6 +16,7 @@ public class BarrelExplode : MonoBehaviour
     {
         if (!exploded)
         {
+            exploded = true;
             //spawn explode effect
             Destroy(Instantiate(explosionEffect, transform.position, Quaternion.identity), 2.0f);
 
@@ -37,11 +38,12 @@ public class BarrelExplode : MonoBehaviour
 
                 }
 
-                //if (o.CompareTag("BarrelHit") && !o.gameObject.GetComponent<BarrelExplode>().exploded)
-                // {
-                //     o.gameObject.GetComponent<BarrelExplode>().Explode();
-                //
-                // }
+                if (o.CompareTag("BarrelHit") && !o.gameObject.GetComponent<BarrelExplode>().exploded)
+                {
+                    o.gameObject.GetComponent<BarrelExplode>().Explode();
+                    Debug.Log("exploded!");
+
+                }
             }
 
             //make barrel move around
@@ -50,10 +52,6 @@ public class BarrelExplode : MonoBehaviour
             rigidBody.mass = 20;
             rigidBody.drag = 0.1f;
             rigidBody.freezeRotation = false;
-
-            //todo: change barrel color and/or something else to indicate that it has exploded
-
-            exploded = true;
         }
     }
     void OnDrawGizmos()
