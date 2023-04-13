@@ -24,7 +24,7 @@ public class BarrelExplode : MonoBehaviour
             material = GetComponent<Renderer>().material;
             material.color = Color.gray;
 
-            //kill enemys in blast radius
+            //kill enemies in blast radius
             Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius, targetLayerMask);
             foreach (var o in objectsToExplode)
             {
