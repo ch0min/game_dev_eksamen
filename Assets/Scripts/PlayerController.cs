@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
 
+
+    public float Health = 100f;
+
     private float moveSpeed = 1;
 
     private Rigidbody rigidBody;
