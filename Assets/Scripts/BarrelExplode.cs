@@ -35,14 +35,13 @@ public class BarrelExplode : MonoBehaviour
 
                 if (o.CompareTag("Player"))
                 {
+                    //TODO: implement player apply damage
 
                 }
 
                 if (o.CompareTag("BarrelHit") && !o.gameObject.GetComponent<BarrelExplode>().exploded)
                 {
                     o.gameObject.GetComponent<BarrelExplode>().Explode();
-                    Debug.Log("exploded!");
-
                 }
             }
 
