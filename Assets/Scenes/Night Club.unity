@@ -12405,7 +12405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followPlayer: {fileID: 46932684}
-  playerOffset: {x: 0, y: 25, z: 0}
+  playerOffset: {x: 0, y: 20, z: 0}
   camSpeed: 400
 --- !u!81 &566427254
 AudioListener:
