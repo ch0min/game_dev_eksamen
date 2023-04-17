@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/NightClub/SciFiProps/Scenes/Prefab.unity.meta
 guid: f1ec3445edb988b4c9b3f03db340bc6b
+========
+guid: fb96adce6a5a411468aa064cd003fef6
+>>>>>>>> oscar:Assets/Scenes/OfficeScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

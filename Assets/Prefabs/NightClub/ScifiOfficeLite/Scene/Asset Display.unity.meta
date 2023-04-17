@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/NightClub/ScifiOfficeLite/Scene/Asset Display.unity.meta
 guid: b5888b526e2805241b71e0569dbb76c7
+========
+guid: 163adec682b5ccd4c8dbb7766c20f3fb
+>>>>>>>> oscar:Assets/UnityTechnologies/ParticlePack/Scenes/Main.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
