@@ -6,9 +6,13 @@ TagManager:
   tags:
   - Enemy
   - WallHit
+<<<<<<< HEAD
   - AssaultRiffle
   - Shotgun
   - Pistol
+=======
+  - Fire
+>>>>>>> mark_branch
   layers:
   - Default
   - TransparentFX
@@ -17,9 +21,9 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
+  - Target
+  - Obstruction
+  - LED
   - 
   - 
   - 

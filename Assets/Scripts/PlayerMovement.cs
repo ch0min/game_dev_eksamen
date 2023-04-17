@@ -7,15 +7,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     Rigidbody rigidBody;
-    public float moveSpeed = 4;
-
     Camera mainCamera;
+    public static Vector3 playerPos;
+
+    
+    public float moveSpeed = 4;
     
     void Start() {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
+
+        StartCoroutine(TrackPlayer());
     }
-    
+
+    IEnumerator TrackPlayer() {
+        while (true) {
+            playerPos = gameObject.transform.position;
+            yield return null;
+        }
+    }
+     
 
     void FixedUpdate() {
         
