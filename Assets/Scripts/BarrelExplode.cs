@@ -36,6 +36,7 @@ public class BarrelExplode : MonoBehaviour
                 if (o.CompareTag("Player"))
                 {
                     //TODO: implement player apply damage
+                    o.gameObject.GetComponent<PlayerController>().ModifyHealth(-100);
 
                 }
 
