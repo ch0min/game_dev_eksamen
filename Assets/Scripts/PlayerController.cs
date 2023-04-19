@@ -58,50 +58,13 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.wKey.wasPressedThisFrame)
         {
-            Debug.Log("D was pressed!");
             animator.SetBool("isWalking", true);
         }
         else
         {
             animator.SetBool("isWalking", false);
         }
-        if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            Debug.Log("D was pressed!");
-            animator.SetBool("isRolling", true);
-        }
-        else
-        {
-            animator.SetBool("isRolling", false);
-        }
-        /*if(moveVector.magnitude > 0)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
-            
-        } */
-
-        if (Keyboard.current != null && Keyboard.current.dKey.wasPressedThisFrame)
-        {
-            Debug.Log("D was pressed!");
-            animator.SetBool("isRightStrafe", true);
-        }
-        else
-        {
-            animator.SetBool("isRightStrafe", false);
-        }
-        if (Keyboard.current != null && Keyboard.current.aKey.wasPressedThisFrame)
-        {
-         
-            animator.SetBool("isLeftStrafe", true);
-        }
-        else
-        {
-            animator.SetBool("isLeftStrafe", false);
-        }
+        
         if (Keyboard.current != null && Keyboard.current.sKey.wasPressedThisFrame)
         {
 
