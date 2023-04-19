@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
 
 
-    public float Health = 100f;
+    public float health = 100f;
 
     private float moveSpeed = 1;
 
@@ -21,6 +21,31 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
 
     private Animator animator;
+
+
+    public void ModifyHealth(float amount)
+    {
+        if (health + amount > 100)
+        {
+            health = 100;
+        }
+        else
+        {
+            health += amount;
+            // health -= Mathf.Abs(amountDamage);  // Might not need Mathf.Abs.
+        }
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        //TODO: add ragdoll instead of Destroy(gameObject)
+        Destroy(gameObject);
+    }
 
     void Start()
     {
@@ -35,7 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
     }
-    
+
     private void FixedUpdate()
     {
         Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -50,7 +75,7 @@ public class PlayerController : MonoBehaviour
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
     }
-    
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -95,7 +120,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Keyboard.current != null && Keyboard.current.aKey.wasPressedThisFrame)
         {
-         
+
             animator.SetBool("isLeftStrafe", true);
         }
         else
