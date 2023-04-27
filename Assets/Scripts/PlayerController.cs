@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.wKey.wasPressedThisFrame)
         {
-            Debug.Log("D was pressed!");
+            // Debug.Log("D was pressed!");
             animator.SetBool("isWalking", true);
         }
         else
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
         {
-            Debug.Log("D was pressed!");
+            // Debug.Log("D was pressed!");
             animator.SetBool("isRolling", true);
         }
         else
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
         if (Keyboard.current != null && Keyboard.current.dKey.wasPressedThisFrame)
         {
-            Debug.Log("D was pressed!");
+            // Debug.Log("D was pressed!");
             animator.SetBool("isRightStrafe", true);
         }
         else
