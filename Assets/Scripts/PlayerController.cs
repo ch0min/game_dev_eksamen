@@ -25,14 +25,11 @@ public class PlayerController : MonoBehaviour
 
     public void ModifyHealth(float amount)
     {
-        if (health + amount > 100)
+        health += amount;
+
+        if (health > 100)
         {
             health = 100;
-        }
-        else
-        {
-            health += amount;
-            // health -= Mathf.Abs(amountDamage);  // Might not need Mathf.Abs.
         }
 
         if (health <= 0)
