@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/AI Test Scene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Night Club.unity
+    guid: c63b7209dac084224b4df0d5002c755a
+  - enabled: 1
+    path: Assets/Scenes/Office Scene.unity
+    guid: 7413d8fa57b7b45228eeb2f38c5f956b
+  - enabled: 1
+    path: Assets/Scenes/Parking Lot.unity
+    guid: 21bb3df3696ea446f9bfc5d6b5b0a5c6
   m_configObjects: {}
