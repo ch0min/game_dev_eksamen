@@ -24,7 +24,6 @@ public class BulletClip : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time >= nextFiretime) {
             
             nextFiretime = Time.time + fireRate;
-
             
             GameObject bulletHolder;
             bulletHolder = Instantiate(bulletClip, transform.position, transform.rotation) as GameObject;

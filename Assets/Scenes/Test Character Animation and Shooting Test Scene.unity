@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 324422441}
   m_Layer: 0
   m_Name: Plane 2
-  m_TagString: WallHit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 463688243}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: WallHit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -713,6 +713,10 @@ PrefabInstance:
     - target: {fileID: 4314151982682371084, guid: abbb05a4e5bc352459e213d7b601534c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347182156371006431, guid: abbb05a4e5bc352459e213d7b601534c, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4347182156714075282, guid: abbb05a4e5bc352459e213d7b601534c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1081,7 +1085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camTransform: {fileID: 0}
-  shakeDuration: 100
+  shakeDuration: 1
   shakeAmount: 0.075
   decreaseFactor: 0.5
 --- !u!1 &1236868321

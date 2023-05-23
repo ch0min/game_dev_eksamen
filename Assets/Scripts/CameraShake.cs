@@ -35,14 +35,14 @@ public class CameraShake : MonoBehaviour {
             else {
                 // Reset shakeDuration if the button is held down
                 if (shakeDuration <= 0f) {
-                    shakeDuration = 100f;
+                    shakeDuration = 1f;
                     camTransform.localPosition = originalPos;
                 }
             }
         }
         else {
             // Reset shakeDuration when the button is released
-            shakeDuration = 100f;
+            shakeDuration = 1f;
             camTransform.localPosition = originalPos;
         }
     }

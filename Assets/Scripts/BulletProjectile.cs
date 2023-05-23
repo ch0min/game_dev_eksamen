@@ -3,14 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletProjectile : MonoBehaviour
-{
+public class BulletProjectile : MonoBehaviour {
     public GameObject bullet;
     public float bulletForce = 2000f;
     public float fireRate = 0.5f;
     float nextFiretime = 0f;
-
-
+    
     public GameObject muzzleFlash;
     public Transform muzzleFlashPosition;
 
