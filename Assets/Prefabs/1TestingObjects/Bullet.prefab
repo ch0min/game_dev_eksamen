@@ -130,5 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodEffect: {fileID: 3235186682389964096, guid: feee8f41a9ab5db48a7606ba0bfcfb7a, type: 3}
   hitEffect: {fileID: 7128480158341252399, guid: 9fc720b3fe414ca49b03a544da9b4283, type: 3}
-  explosionEffect: {fileID: 5292749912145050824, guid: e69217a5e7d02b58f92cc4465cc72a15, type: 3}
   damage: 25
