@@ -25,9 +25,13 @@ public class PlayerController : MonoBehaviour
 
     public void ModifyHealth(float damage)
     {
-        health -= damage;
+        health += damage;
 
-        if (health <= 0)
+        if (health > 100)
+        {
+            health = 100;
+        }
+        if(health <= 0)
         {
             Die();
         }

@@ -16,7 +16,7 @@ public class AIBehaviour : MonoBehaviour
     int randomSpot;
     Animator anim;
     private float attackDistance = 2f;
-    public float damage = 10f;
+    public float damage = -10f;
     
 
     // FIELD OF VIEW
