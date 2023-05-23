@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CameraShake : MonoBehaviour
-{
+public class CameraShake : MonoBehaviour {
     // Transform of the camera to shake. Grabs the gameObject's transform
     // if null.
     public Transform camTransform;
@@ -28,7 +27,7 @@ public class CameraShake : MonoBehaviour
 
     void Update() {
         if (Input.GetButton("Fire1")) {
-            if (shakeDuration > 0) {
+            if (shakeDuration > 0f) {
                 camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
 
                 shakeDuration -= Time.deltaTime * decreaseFactor;
