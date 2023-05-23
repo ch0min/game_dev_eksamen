@@ -20,14 +20,6 @@ public class BulletProjectile : MonoBehaviour
 
     void Update() {
         Shoot();
-
-
-        // if (Input.GetMouseButtonDown(0)) {
-        //     muzzleFlash.Play();
-        // }
-        // else {
-        //     muzzleFlash.Stop();
-        // }
     }
 
 
