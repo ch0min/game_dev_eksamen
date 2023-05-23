@@ -2164,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446728, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 76.94665
+      value: 75.61
       objectReference: {fileID: 0}
     - target: {fileID: 446728, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2172,7 +2172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446728, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.274857
+      value: 20.95
       objectReference: {fileID: 0}
     - target: {fileID: 446728, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8490,15 +8490,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 450782, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.08523
+      value: 45.72
       objectReference: {fileID: 0}
     - target: {fileID: 450782, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.545409
+      value: -11.55
       objectReference: {fileID: 0}
     - target: {fileID: 450782, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.55529
+      value: 12.86
       objectReference: {fileID: 0}
     - target: {fileID: 450782, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13464,6 +13464,7 @@ GameObject:
   - component: {fileID: 814078649}
   - component: {fileID: 814078648}
   - component: {fileID: 814078647}
+  - component: {fileID: 814078652}
   m_Layer: 0
   m_Name: Door Open Trigger
   m_TagString: Untagged
@@ -13556,13 +13557,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814078646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.22, y: 2.69, z: 23.67}
-  m_LocalScale: {x: 1, y: 2.7156, z: 2.4514}
+  m_LocalPosition: {x: -28.4, y: 2.69, z: 23.67}
+  m_LocalScale: {x: 2.0370848, y: 2.7156, z: 4.0938377}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &814078652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814078646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14726d050c698c242b1afd97ac5e3b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The battle you're about to face will test your might and wit. Prepare yourself,
+    for the epic confrontation awaits!
 --- !u!4 &814446423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442080, guid: bf8363b0ff810d34eb188506e160156d, type: 3}
@@ -23948,7 +23963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.35457
+      value: 51.23
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23956,7 +23971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.399355
+      value: 21.29
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
       propertyPath: m_LocalRotation.w
