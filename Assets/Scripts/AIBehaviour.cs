@@ -14,8 +14,11 @@ public class AIBehaviour : MonoBehaviour
     public Transform[] moveSpots;
     NavMeshAgent navAgent;
     int randomSpot;
-
+    Animator anim;
+    private float attackDistance = 2f;
+    public float damage = 10f;
     
+
     // FIELD OF VIEW
     public bool canSeePlayer;
     public float radiusFOV;
@@ -46,6 +49,7 @@ public class AIBehaviour : MonoBehaviour
     }
 
     void Start() {
+        anim = GetComponent<Animator>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
         
@@ -55,19 +59,37 @@ public class AIBehaviour : MonoBehaviour
 
     void Update() {
         if (navAgent.isActiveAndEnabled) { // Patrolling
-            if (canSeePlayer == false && memorizesPlayerAI == false) {
+            if (canSeePlayer == false && memorizesPlayerAI == false)
+            {
                 Patrol();
                 NoiseCheck();
                 StopCoroutine(AIMemory());
+                anim.SetBool("canSeePlayer", false);
+                anim.SetBool("attack", false);
             }
-            else if (canSeePlayer) { // If AI sees Player, chase and remember the player for seconds~
+            else if (canSeePlayer)
+            { // If AI sees Player, chase and remember the player for seconds~
                 memorizesPlayerAI = true;
                 ChasePlayer();
+                anim.SetBool("canSeePlayer", true);
+                anim.SetBool("attack", false);
             }
-            else if (canSeePlayer == false && memorizesPlayerAI) { // AI forgets about the player after seconds~
+            else if (canSeePlayer == false && memorizesPlayerAI)
+            { // AI forgets about the player after seconds~
                 ChasePlayer();
                 StartCoroutine(AIMemory());
+                anim.SetBool("canSeePlayer", false);
+                anim.SetBool("attack", false);
             }
+            else if (Vector3.Distance(transform.position, playerRef.transform.position) < attackDistance)
+            {
+                anim.SetBool("attack", true);
+            }
+            else
+            {
+                anim.SetBool("attack", false);
+            }
+
         }
 
         float hearingDistance = Vector3.Distance(PlayerMovement.playerPos, transform.position);
@@ -166,6 +188,18 @@ public class AIBehaviour : MonoBehaviour
         if (canSeePlayer)
         {
             navAgent.SetDestination(playerRef.transform.position);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.ModifyHealth(damage);
+            }
         }
     }
 

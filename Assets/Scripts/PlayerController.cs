@@ -23,14 +23,9 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
 
-    public void ModifyHealth(float amount)
+    public void ModifyHealth(float damage)
     {
-        health += amount;
-
-        if (health > 100)
-        {
-            health = 100;
-        }
+        health -= damage;
 
         if (health <= 0)
         {
