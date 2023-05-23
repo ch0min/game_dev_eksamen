@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 19900000}
   - component: {fileID: 11400000}
   m_Layer: 0
-  m_Name: WFXMR_SmokeGrenade AlphaBlend Black
+  m_Name: WFXMR_SmokeGrenade AlphaBlend Gray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 0.5019608}
+      maxColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.5019608}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 0.7137255, b: 0.3882353, a: 1}
@@ -418,7 +418,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -471,7 +471,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -558,7 +558,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 130
+    maxNumParticles: 58
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -824,7 +824,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 12
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4641,7 +4641,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1cbcc6eff0861c54fae4adca29238f73, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4892,7 +4891,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.54901963}
+      maxColor: {r: 0.85882354, g: 0.85882354, b: 0.85882354, a: 0.54901963}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.8352941, g: 0.8352941, b: 0.8352941, a: 0.5019608}
@@ -9317,7 +9316,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fe481424cfe6854488d84d32d6408432, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
