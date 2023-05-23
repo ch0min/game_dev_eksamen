@@ -8,12 +8,11 @@ public class DoorOpenScript : MonoBehaviour
     private GameObject doorRight;
     [SerializeField]
     private GameObject doorLeft;
-
     private bool isOpen;
 
     void OnTriggerEnter(Collider col)
     {
-        if (!isOpen){
+        if (col.gameObject.CompareTag("Player") && !isOpen){
         doorRight.transform.Translate(Vector3.right);
         doorLeft.transform.Translate(Vector3.left);
         isOpen = true;
