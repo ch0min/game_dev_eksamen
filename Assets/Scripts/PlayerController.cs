@@ -7,18 +7,12 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     public float health = 100f;
-
     [SerializeField]
     private float moveSpeed = 1;
-
     private Rigidbody rigidBody;
-
     private Camera mainCamera;
-
     private Vector2 moveVector;
-
     private CharacterController characterController;
-
     private Animator animator;
 
 
@@ -28,7 +22,6 @@ public class PlayerController : MonoBehaviour
         if (health > 100) {
             health = 100;
         }
-
         if (health <= 0) {
             Die();
         }

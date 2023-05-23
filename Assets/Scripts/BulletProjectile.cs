@@ -18,13 +18,10 @@ public class BulletProjectile : MonoBehaviour
         Shoot();
     }
 
-
     void Shoot() {
-        
         if (Input.GetButton("Fire1") && Time.time >= nextFiretime) {
             nextFiretime = Time.time + fireRate;
             GameObject Flash = Instantiate(muzzleFlash, muzzleFlashPosition);
-
             
             GameObject bulletHolder;
             bulletHolder = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
@@ -34,14 +31,9 @@ public class BulletProjectile : MonoBehaviour
             _rigidbody = bulletHolder.GetComponent<Rigidbody>();
             _rigidbody.AddForce(transform.forward * bulletForce);
             
-            
-
             Destroy(Flash, 0.15f);
-
             Destroy(bulletHolder, 3.0f);
 
         }
-        
     }
-    
 }
