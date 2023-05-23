@@ -13486,6 +13486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorRight: {fileID: 1573614327}
   doorLeft: {fileID: 1397623280}
+  doorOpenAmount: 1
 --- !u!65 &814078648
 BoxCollider:
   m_ObjectHideFlags: 0
