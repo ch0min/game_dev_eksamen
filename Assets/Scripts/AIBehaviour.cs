@@ -14,6 +14,7 @@ public class AIBehaviour : MonoBehaviour
     public Transform[] moveSpots;
     NavMeshAgent navAgent;
     int randomSpot;
+
     
     // FIELD OF VIEW
     public bool canSeePlayer;
@@ -160,10 +161,13 @@ public class AIBehaviour : MonoBehaviour
         }
     }
 
-    public void ChasePlayer() {
-        if (canSeePlayer) {
-            navAgent.SetDestination(PlayerMovement.playerPos);
+    public void ChasePlayer()
+    {
+        if (canSeePlayer)
+        {
+            navAgent.SetDestination(playerRef.transform.position);
         }
     }
-    
+
+
 }
