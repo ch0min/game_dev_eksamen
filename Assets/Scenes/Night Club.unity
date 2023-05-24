@@ -24350,8 +24350,9 @@ GameObject:
   - component: {fileID: 1044663827}
   - component: {fileID: 1044663826}
   - component: {fileID: 1044663825}
+  - component: {fileID: 1044663828}
   m_Layer: 0
-  m_Name: Door Close Trigger
+  m_Name: Dialouge Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24365,7 +24366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044663823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.73, y: -15.56, z: 8.95}
+  m_LocalPosition: {x: 7.73, y: -15.56, z: -0.45}
   m_LocalScale: {x: 11.634296, y: 4.3834, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24435,6 +24436,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044663823}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1044663828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044663823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14726d050c698c242b1afd97ac5e3b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: some text
 --- !u!1001 &1045617889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28884,7 +28898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5944654773601380006, guid: 8b2ed08f82f4cea41907e2cf2f8938c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.51
+      value: 38.042
       objectReference: {fileID: 0}
     - target: {fileID: 5944654773601380006, guid: 8b2ed08f82f4cea41907e2cf2f8938c5, type: 3}
       propertyPath: m_LocalPosition.z
