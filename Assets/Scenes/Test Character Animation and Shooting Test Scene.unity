@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followPlayer: {fileID: 543450651807332921}
   playerOffset: {x: 0, y: 10, z: 0}
-  camSpeed: 400
+  lerpSpeed: 5
 --- !u!20 &184356705
 Camera:
   m_ObjectHideFlags: 0
@@ -1167,12 +1167,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9042198254978085697, guid: 505425602a834c647a20580746b1d35e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7724
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042198254978085697, guid: 505425602a834c647a20580746b1d35e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.92
       objectReference: {fileID: 0}
     - target: {fileID: 9042198254978085697, guid: 505425602a834c647a20580746b1d35e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7000046
+      value: 3.4724
       objectReference: {fileID: 0}
     - target: {fileID: 9042198254978085697, guid: 505425602a834c647a20580746b1d35e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1227,6 +1231,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e74b47ec2760b4483ab03cea8c535c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1696303348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696303349}
+  m_Layer: 0
+  m_Name: Muzzle Flash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1696303349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696303348}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.11, y: 1.457, z: 1.701}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651807332921}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735752194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8007989387266818457, guid: fc5d1b35046da85449c494f0fbaa439c, type: 3}
@@ -1366,6 +1401,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2553047398399320732, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: muzzleFlashPosition
+      value: 
+      objectReference: {fileID: 1696303349}
+    - target: {fileID: 2553047398399320733, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1282
+      objectReference: {fileID: 0}
+    - target: {fileID: 2553047398399320733, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2553047398399320734, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: m_Name
+      value: Bullet Point
+      objectReference: {fileID: 0}
     - target: {fileID: 2658397462734127826, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
       propertyPath: m_RootOrder
       value: 2
