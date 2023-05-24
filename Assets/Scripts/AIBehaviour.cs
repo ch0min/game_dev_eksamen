@@ -198,7 +198,7 @@ public class AIBehaviour : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.ModifyHealth(damage);
+                player.ModifyHealth(-10);
             }
         }
     }
