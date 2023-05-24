@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveVector;
     private CharacterController characterController;
     private Animator animator;
+    
+    public static Vector3 playerPos;
+
 
 
     public void ModifyHealth(float amount) {
@@ -39,6 +42,15 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 
     }
+
+
+    IEnumerator TrackPlayer() {
+        while (true) {
+            playerPos = gameObject.transform.position;
+            yield return null;
+        }
+    }
+
 
     void Update() {
         Move();
@@ -93,21 +105,21 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRightStrafe", false);
         }
         if (Keyboard.current != null && Keyboard.current.aKey.wasPressedThisFrame) {
-        
+
             animator.SetBool("isLeftStrafe", true);
         }
         else {
             animator.SetBool("isLeftStrafe", false);
         }
         if (Keyboard.current != null && Keyboard.current.sKey.wasPressedThisFrame) {
-        
+
             animator.SetBool("isBackwards", true);
         }
         else {
             animator.SetBool("isBackwards", false);
         }
         if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame) {
-        
+
             animator.SetBool("isRolling", true);
         }
         else {
