@@ -5,21 +5,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-/*** ÆNDRE HURTIGHED PÅ FJENDEN NÅR VI HAR IMPLEMENTERET SKIN ***/
-
-/***  ***/
-
-public class AIBehaviour : MonoBehaviour
-{
+public class AIBehaviour : MonoBehaviour {
     public Transform[] moveSpots;
-    NavMeshAgent navAgent;
-    int randomSpot;
-    Animator anim;
-    private float attackDistance = 2f;
-    public float damage = -10f;
+    private NavMeshAgent navAgent;
+    private Animator anim;
     
+    [SerializeField]
+    private float attackDistance = 3f;
+    public float damage = -10f;
 
-    // FIELD OF VIEW
+    // Field of View
     public bool canSeePlayer;
     public float radiusFOV;
     [Range(0, 360)]
@@ -28,60 +23,55 @@ public class AIBehaviour : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
-    // PATROLLING WAIT TIME
-    float waitTime;
+    // Patrolling and AI Memory
+    private float waitTime;
     public float startWaitTime = 1f;
-    
-    // AI MEMORY
-    bool memorizesPlayerAI = false;
+    private bool memorizesPlayerAI = false;
     public float memoryStartTime = 15f;
-    float increasingMemoryTime;
+    private float increasingMemoryTime;
 
-    // AI HEARING
-    Vector3 noisePosition;
+    // AI Hearing
+    private Vector3 noisePosition;
     public bool heardPlayerAI = false;
     public float noiseTravelDistance = 50.0f;
-    float isSpinningTime; // Searching at player-noise-position
 
-    void Awake() {
+    
+    
+    private void Awake() {
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.enabled = true;
     }
 
-    void Start() {
+    private void Start() {
         anim = GetComponent<Animator>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
-        
+
         waitTime = startWaitTime;
-        randomSpot = Random.Range(0, moveSpots.Length);
+        int randomSpot = Random.Range(0, moveSpots.Length);
+        navAgent.SetDestination(moveSpots[randomSpot].position);
     }
 
-    void Update() {
-        if (navAgent.isActiveAndEnabled) { // Patrolling
-            if (canSeePlayer == false && memorizesPlayerAI == false)
-            {
-                Patrol();
-                NoiseCheck();
-                StopCoroutine(AIMemory());
-                anim.SetBool("canSeePlayer", false);
-                anim.SetBool("attack", false);
-            }
-            else if (canSeePlayer)
-            { // If AI sees Player, chase and remember the player for seconds~
-                memorizesPlayerAI = true;
-                ChasePlayer();
-                anim.SetBool("canSeePlayer", true);
-                anim.SetBool("attack", false);
-            }
-            else if (canSeePlayer == false && memorizesPlayerAI)
-            { // AI forgets about the player after seconds~
-                ChasePlayer();
-                StartCoroutine(AIMemory());
-                anim.SetBool("canSeePlayer", false);
-                anim.SetBool("attack", false);
-            }
-            else if (Vector3.Distance(transform.position, playerRef.transform.position) < attackDistance)
+    private void Update()
+    {
+        if (!navAgent.isActiveAndEnabled) return;
+
+        if (!canSeePlayer && !memorizesPlayerAI)
+        {
+            Patrol();
+            NoiseCheck();
+            StopCoroutine(AIMemory());
+            anim.SetBool("canSeePlayer", false);
+            anim.SetBool("attack", false);
+        }
+        else if (canSeePlayer)
+        {
+            memorizesPlayerAI = true;
+            ChasePlayer();
+            anim.SetBool("canSeePlayer", true);
+            anim.SetBool("attack", false);
+
+            if (Vector3.Distance(transform.position, playerRef.transform.position) < attackDistance)
             {
                 anim.SetBool("attack", true);
             }
@@ -89,22 +79,37 @@ public class AIBehaviour : MonoBehaviour
             {
                 anim.SetBool("attack", false);
             }
-
+        }
+        else if (!canSeePlayer && memorizesPlayerAI)
+        {
+            ChasePlayer();
+            StartCoroutine(AIMemory());
+            anim.SetBool("canSeePlayer", false);
+            anim.SetBool("attack", false);
+        }
+        else
+        {
+            anim.SetBool("canSeePlayer", false);
+            anim.SetBool("attack", false);
         }
 
-        float hearingDistance = Vector3.Distance(PlayerMovement.playerPos, transform.position);
-        if (hearingDistance <= noiseTravelDistance) {
-            if (Input.GetButton("Fire1")) {
-                noisePosition = PlayerMovement.playerPos;
+        float hearingDistance = Vector3.Distance(PlayerController.playerPos, transform.position);
+        if (hearingDistance <= noiseTravelDistance)
+        {
+            if (Input.GetButton("Fire1"))
+            {
+                noisePosition = PlayerController.playerPos;
                 heardPlayerAI = true;
             }
-            else {
+            else
+            {
                 heardPlayerAI = false;
             }
         }
     }
 
-    IEnumerator AIMemory() {
+
+    private IEnumerator AIMemory() {
         increasingMemoryTime = 0;
         while (increasingMemoryTime < memoryStartTime) {
             increasingMemoryTime += Time.deltaTime;
@@ -114,17 +119,17 @@ public class AIBehaviour : MonoBehaviour
         heardPlayerAI = false;
         memorizesPlayerAI = false;
     }
-    
-    IEnumerator FOVRoutine() {
+
+    private IEnumerator FOVRoutine() {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
-        
+
         while (true) {
             yield return wait;
             FieldOfViewCheck();
         }
     }
 
-    void FieldOfViewCheck() {
+    private void FieldOfViewCheck() {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radiusFOV, targetMask);
 
         if (rangeChecks.Length != 0) {
@@ -133,7 +138,7 @@ public class AIBehaviour : MonoBehaviour
 
             if (Vector3.Angle(transform.forward, directionToTarget) < angleFOV / 2) {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
-                
+
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)) {
                     canSeePlayer = true;
                     ChasePlayer();
@@ -151,9 +156,9 @@ public class AIBehaviour : MonoBehaviour
             canSeePlayer = false;
         }
     }
-    
-    void NoiseCheck() {
-        float distance = Vector3.Distance(PlayerMovement.playerPos, transform.position);
+
+    private void NoiseCheck() {
+        float distance = Vector3.Distance(PlayerController.playerPos, transform.position);
         if (distance <= noiseTravelDistance) {
             if (Input.GetButton("Fire1")) {
                 ChasePlayer();
@@ -169,39 +174,30 @@ public class AIBehaviour : MonoBehaviour
             }
         }
     }
-    
-    void Patrol() {
-        navAgent.SetDestination(moveSpots[randomSpot].position);
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 2.0f) {
+
+    private void Patrol() {
+        if (!navAgent.pathPending && navAgent.remainingDistance < 0.5f) {
+            waitTime -= Time.deltaTime;
             if (waitTime <= 0) {
-                randomSpot = Random.Range(0, moveSpots.Length);
+                int randomSpot = Random.Range(0, moveSpots.Length);
+                navAgent.SetDestination(moveSpots[randomSpot].position);
                 waitTime = startWaitTime;
-            }
-            else {
-                waitTime -= Time.deltaTime;
             }
         }
     }
 
-    public void ChasePlayer()
-    {
-        if (canSeePlayer)
-        {
+    public void ChasePlayer() {
+        if (canSeePlayer) {
             navAgent.SetDestination(playerRef.transform.position);
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
             PlayerController player = other.GetComponent<PlayerController>();
-            if (player != null)
-            {
-                player.ModifyHealth(-10);
+            if (player != null) {
+                player.ModifyHealth(damage);
             }
         }
     }
-
-
 }

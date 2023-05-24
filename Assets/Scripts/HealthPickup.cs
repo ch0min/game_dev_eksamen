@@ -7,6 +7,9 @@ public class HealthPickup : MonoBehaviour
     PlayerController player;
     [SerializeField] float healthBonus = 10f;
 
+    void Update() {
+        transform.Rotate(Vector3.up, 100 * Time.deltaTime);
+    }
 
     void Awake()
     {

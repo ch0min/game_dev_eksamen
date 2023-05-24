@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/1TestingObjects/NewCharacter.meta
 guid: 79350a2530a223f41ab9bd86bb4b4d48
+========
+guid: ea48ca2bc961c2447b41af0a7b6aa7d1
+>>>>>>>> main:Assets/Prefabs/Ammo.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
