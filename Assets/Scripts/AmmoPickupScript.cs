@@ -5,9 +5,10 @@ using UnityEngine;
 public class AmmoPickupScript : MonoBehaviour
 {
     PlayerController player;
-    [SerializeField] float AmmoAmount = 30f;
+    [SerializeField] int AmmoAmount = 30;
 
-    void Update() {
+    void Update()
+    {
         transform.Rotate(Vector3.up, 100 * Time.deltaTime);
     }
 
@@ -19,6 +20,6 @@ public class AmmoPickupScript : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         Destroy(gameObject);
-        // player.AddAmmo(AmmoAmount);
+        player.AddAmmo(AmmoAmount);
     }
 }
