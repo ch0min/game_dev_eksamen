@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,19 +9,22 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 1;
 
+    private Animator animator;
+    private CharacterController characterController;
+
+    private Camera mainCamera;
+    private Vector2 moveVector;
+    private Rigidbody rigidBody;
+
     public BulletProjectile bulletProjectile;
     public CameraShake cameraShake;
     public BulletClip bulletClip;
 
-    private Animator animator;
-    private CharacterController characterController;
-
     private int currentAmmo;
-    private readonly int magazineSize = 30;
-    private Camera mainCamera;
-    private Vector2 moveVector;
-    private int reserveAmmo = 90;
-    private Rigidbody rigidBody;
+    private int magazineSize = 30;
+    private int reserveAmmo = 30;
+    private float reloadDuration = 1.5f; // Duration of the reload action in seconds
+    private bool isReloading = false;
 
     private void Start()
     {
@@ -34,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         if (Input.GetButton("Fire1")) Fire();
+        Debug.Log(currentAmmo + "/" + reserveAmmo);
     }
 
     private void FixedUpdate()
@@ -59,7 +65,6 @@ public class PlayerController : MonoBehaviour
     public void ModifyHealth(float amount)
     {
         health += amount;
-
         if (health > 100) health = 100;
         if (health <= 0) Die();
     }
@@ -72,9 +77,48 @@ public class PlayerController : MonoBehaviour
 
     public void Fire()
     {
-        bulletProjectile.Shoot();
-        bulletClip.ShootClip();
-        cameraShake.Shake();
+        if (currentAmmo > 0)
+        {
+            bulletProjectile.Shoot();
+            bulletClip.ShootClip();
+            cameraShake.Shake();
+
+            currentAmmo--;
+            //animator.SetTrigger("Shooting");
+        }
+        else
+        {
+            StartCoroutine(ReloadCoroutine());
+        }
+    }
+
+    private IEnumerator ReloadCoroutine()
+    {
+        while (!isReloading)
+        {
+            isReloading = true;
+            // reloadProgress = 0f;
+
+            // Play the reload animation
+            // animator.SetBool("Reloading", true);
+
+            // Wait for the reload duration
+            yield return new WaitForSeconds(reloadDuration);
+
+            // Refill the magazine and subtract the used ammo from the reserve
+            int ammoNeeded = magazineSize - currentAmmo;
+            int ammoToReload = Mathf.Min(ammoNeeded, reserveAmmo);
+
+            currentAmmo += ammoToReload;
+            reserveAmmo -= ammoToReload;
+
+            // Stop the reload animation and reset the reloading flag
+            // animator.SetBool("Reloading", false);
+            isReloading = false;
+
+            // Update the reload progress to 0
+            // reloadProgress = 0f;
+        }
     }
 
 
