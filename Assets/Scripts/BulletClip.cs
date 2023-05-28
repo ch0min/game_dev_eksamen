@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletClip : MonoBehaviour
@@ -11,31 +8,30 @@ public class BulletClip : MonoBehaviour
 
 
     public float fireRate = 0.5f;
-    float nextFiretime = 0f;
-    
+    private float nextFiretime;
 
-    void Update() {
-        ShootClip();
+
+    private void Update()
+    {
+        // ShootClip();
     }
 
 
-    void ShootClip() {
-        
-        if (Input.GetButton("Fire1") && Time.time >= nextFiretime) {
-            
+    public void ShootClip()
+    {
+        // if (Input.GetButton("Fire1") && Time.time >= nextFiretime)
+        if (Time.time >= nextFiretime)
+        {
             nextFiretime = Time.time + fireRate;
-            
+
             GameObject bulletHolder;
-            bulletHolder = Instantiate(bulletClip, transform.position, transform.rotation) as GameObject;
-            
+            bulletHolder = Instantiate(bulletClip, transform.position, transform.rotation);
+
             Rigidbody _rigidbody;
             _rigidbody = bulletHolder.GetComponent<Rigidbody>();
             _rigidbody.AddForce(transform.right * bulletForce);
-            
-            Destroy(bulletHolder, 6.0f);
 
+            Destroy(bulletHolder, 6.0f);
         }
-        
     }
-    
 }

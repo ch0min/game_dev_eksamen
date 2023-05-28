@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1119,6 +1119,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256179131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2553047398399320732, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+  m_PrefabInstance: {fileID: 2553047399735982315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2e8b5c667acbc40959222c22f87dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1378113562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1402,6 +1413,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2553047398399320732, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: bulletClip
+      value: 
+      objectReference: {fileID: 1334033361499807198, guid: dffe3fd3e82078c45a48df396312048b, type: 3}
+    - target: {fileID: 2553047398399320732, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: bulletClipPosition
+      value: 
+      objectReference: {fileID: 552861287}
+    - target: {fileID: 2553047398399320732, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
       propertyPath: muzzleFlashPosition
       value: 
       objectReference: {fileID: 1696303349}
@@ -1417,6 +1436,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet Point
       objectReference: {fileID: 0}
+    - target: {fileID: 2553047398885610558, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: bulletClip
+      value: 
+      objectReference: {fileID: 552861288}
+    - target: {fileID: 2553047398885610558, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 1192344803}
+    - target: {fileID: 2553047398885610558, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
+      propertyPath: bulletProjectile
+      value: 
+      objectReference: {fileID: 1256179131}
     - target: {fileID: 2658397462734127826, guid: 48b4f3e083a16ec47967b3aa63317bee, type: 3}
       propertyPath: m_RootOrder
       value: 2
