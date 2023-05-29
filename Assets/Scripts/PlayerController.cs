@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,9 +26,12 @@ public class PlayerController : MonoBehaviour
     private int reserveAmmo = 30;
     private float reloadDuration = 1.5f; // Reload in seconds
     private bool isReloading = false;
+    public Text ammoText;
 
     private void Start()
     {
+        ammoText = GameObject.Find("AmmoText").GetComponent<Text>();
+        Debug.Log(ammoText);
         characterController = GetComponent<CharacterController>();
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("pressed r");
             StartCoroutine(ReloadCoroutine());
         }
+        ammoText.text = currentAmmo + "/" + reserveAmmo;
     }
 
     private void FixedUpdate()
