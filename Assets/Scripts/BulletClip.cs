@@ -6,7 +6,6 @@ public class BulletClip : MonoBehaviour
     public Transform bulletClipPosition;
     public float bulletForce = 1000f;
 
-
     public float fireRate = 0.5f;
     private float nextFiretime;
 
@@ -20,18 +19,18 @@ public class BulletClip : MonoBehaviour
     public void ShootClip()
     {
         // if (Input.GetButton("Fire1") && Time.time >= nextFiretime)
-        if (Time.time >= nextFiretime)
-        {
-            nextFiretime = Time.time + fireRate;
+        // if (Time.time >= nextFiretime)
+        // {
+        nextFiretime = Time.time + fireRate;
 
-            GameObject bulletHolder;
-            bulletHolder = Instantiate(bulletClip, transform.position, transform.rotation);
+        GameObject bulletHolder;
+        bulletHolder = Instantiate(bulletClip, transform.position, transform.rotation);
 
-            Rigidbody _rigidbody;
-            _rigidbody = bulletHolder.GetComponent<Rigidbody>();
-            _rigidbody.AddForce(transform.right * bulletForce);
+        Rigidbody _rigidbody;
+        _rigidbody = bulletHolder.GetComponent<Rigidbody>();
+        _rigidbody.AddForce(transform.right * bulletForce);
 
-            Destroy(bulletHolder, 6.0f);
-        }
+        Destroy(bulletHolder, 6.0f);
+        // }
     }
 }

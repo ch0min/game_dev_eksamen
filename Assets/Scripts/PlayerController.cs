@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private int currentAmmo;
     private int magazineSize = 30;
     private int reserveAmmo = 30;
-    private float reloadDuration = 1.5f; // Duration of the reload action in seconds
+    private float reloadDuration = 1.5f; // Reload in seconds
     private bool isReloading = false;
 
     private void Start()
@@ -79,12 +79,15 @@ public class PlayerController : MonoBehaviour
     {
         if (currentAmmo > 0)
         {
-            bulletProjectile.Shoot();
-            bulletClip.ShootClip();
-            cameraShake.Shake();
-
-            currentAmmo--;
-            //animator.SetTrigger("Shooting");
+            if (Time.time >= bulletProjectile._nextFireTime)
+            {
+                bulletProjectile._nextFireTime = Time.time + bulletProjectile.fireRate;
+                bulletProjectile.Shoot();
+                bulletClip.ShootClip();
+                cameraShake.Shake();
+                currentAmmo--;
+                //animator.SetTrigger("Shooting");
+            }
         }
         else
         {
@@ -97,8 +100,6 @@ public class PlayerController : MonoBehaviour
         while (!isReloading)
         {
             isReloading = true;
-            // reloadProgress = 0f;
-
             // Play the reload animation
             // animator.SetBool("Reloading", true);
 
@@ -115,9 +116,6 @@ public class PlayerController : MonoBehaviour
             // Stop the reload animation and reset the reloading flag
             // animator.SetBool("Reloading", false);
             isReloading = false;
-
-            // Update the reload progress to 0
-            // reloadProgress = 0f;
         }
     }
 
