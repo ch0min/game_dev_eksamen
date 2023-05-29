@@ -5,11 +5,12 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class AIBehaviour : MonoBehaviour {
+public class AIBehaviour : MonoBehaviour
+{
     public Transform[] moveSpots;
     private NavMeshAgent navAgent;
     private Animator anim;
-    
+
     [SerializeField]
     private float attackDistance = 3f;
     public float damage = -10f;
@@ -35,14 +36,16 @@ public class AIBehaviour : MonoBehaviour {
     public bool heardPlayerAI = false;
     public float noiseTravelDistance = 50.0f;
 
-    
-    
-    private void Awake() {
+
+
+    private void Awake()
+    {
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.enabled = true;
     }
 
-    private void Start() {
+    private void Start()
+    {
         anim = GetComponent<Animator>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
@@ -109,9 +112,11 @@ public class AIBehaviour : MonoBehaviour {
     }
 
 
-    private IEnumerator AIMemory() {
+    private IEnumerator AIMemory()
+    {
         increasingMemoryTime = 0;
-        while (increasingMemoryTime < memoryStartTime) {
+        while (increasingMemoryTime < memoryStartTime)
+        {
             increasingMemoryTime += Time.deltaTime;
             memorizesPlayerAI = true;
             yield return null;
@@ -120,54 +125,67 @@ public class AIBehaviour : MonoBehaviour {
         memorizesPlayerAI = false;
     }
 
-    private IEnumerator FOVRoutine() {
+    private IEnumerator FOVRoutine()
+    {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
 
-        while (true) {
+        while (true)
+        {
             yield return wait;
             FieldOfViewCheck();
         }
     }
 
-    private void FieldOfViewCheck() {
+    private void FieldOfViewCheck()
+    {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radiusFOV, targetMask);
 
-        if (rangeChecks.Length != 0) {
+        if (rangeChecks.Length != 0)
+        {
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angleFOV / 2) {
+            if (Vector3.Angle(transform.forward, directionToTarget) < angleFOV / 2)
+            {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)) {
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                {
                     canSeePlayer = true;
                     ChasePlayer();
                     angleFOV = 300f;
                 }
-                else {
+                else
+                {
                     canSeePlayer = false;
                 }
             }
-            else {
+            else
+            {
                 canSeePlayer = false;
             }
         }
-        else if (canSeePlayer) {
+        else if (canSeePlayer)
+        {
             canSeePlayer = false;
         }
     }
 
-    private void NoiseCheck() {
+    private void NoiseCheck()
+    {
         float distance = Vector3.Distance(PlayerController.playerPos, transform.position);
-        if (distance <= noiseTravelDistance) {
-            if (Input.GetButton("Fire1")) {
+        if (distance <= noiseTravelDistance)
+        {
+            if (Input.GetButton("Fire1"))
+            {
                 ChasePlayer();
                 heardPlayerAI = true;
                 canSeePlayer = true;
                 radiusFOV = 20f;
                 angleFOV = 160f;
             }
-            else {
+            else
+            {
                 heardPlayerAI = false;
                 radiusFOV = 10f;
                 angleFOV = 110f;
@@ -175,10 +193,13 @@ public class AIBehaviour : MonoBehaviour {
         }
     }
 
-    private void Patrol() {
-        if (!navAgent.pathPending && navAgent.remainingDistance < 0.5f) {
+    private void Patrol()
+    {
+        if (!navAgent.pathPending && navAgent.remainingDistance < 0.5f)
+        {
             waitTime -= Time.deltaTime;
-            if (waitTime <= 0) {
+            if (waitTime <= 0)
+            {
                 int randomSpot = Random.Range(0, moveSpots.Length);
                 navAgent.SetDestination(moveSpots[randomSpot].position);
                 waitTime = startWaitTime;
@@ -186,16 +207,21 @@ public class AIBehaviour : MonoBehaviour {
         }
     }
 
-    public void ChasePlayer() {
-        if (canSeePlayer) {
+    public void ChasePlayer()
+    {
+        if (canSeePlayer)
+        {
             navAgent.SetDestination(playerRef.transform.position);
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
             PlayerController player = other.GetComponent<PlayerController>();
-            if (player != null) {
+            if (player != null)
+            {
                 player.ModifyHealth(damage);
             }
         }
