@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
     private CharacterController characterController;
-    public static Vector3 playerPos;
-    private float gravity = 9.81f;
 
     private Camera mainCamera;
     private Vector2 moveVector;
@@ -23,9 +21,9 @@ public class PlayerController : MonoBehaviour
     public BulletClip bulletClip;
 
     private int currentAmmo;
-    private int magazineSize = 100;
-    private int reserveAmmo = 100;
-    private float reloadDuration = 1.5f; // Duration of the reload action in seconds
+    private int magazineSize = 30;
+    private int reserveAmmo = 30;
+    private float reloadDuration = 1.5f; // Reload in seconds
     private bool isReloading = false;
 
     private void Start()
@@ -81,12 +79,15 @@ public class PlayerController : MonoBehaviour
     {
         if (currentAmmo > 0)
         {
-            bulletProjectile.Shoot();
-            bulletClip.ShootClip();
-            cameraShake.Shake();
-
-            currentAmmo--;
-            //animator.SetTrigger("Shooting");
+            if (Time.time >= bulletProjectile._nextFireTime)
+            {
+                bulletProjectile._nextFireTime = Time.time + bulletProjectile.fireRate;
+                bulletProjectile.Shoot();
+                bulletClip.ShootClip();
+                cameraShake.Shake();
+                currentAmmo--;
+                //animator.SetTrigger("Shooting");
+            }
         }
         else
         {
@@ -99,8 +100,6 @@ public class PlayerController : MonoBehaviour
         while (!isReloading)
         {
             isReloading = true;
-            // reloadProgress = 0f;
-
             // Play the reload animation
             // animator.SetBool("Reloading", true);
 
@@ -117,9 +116,6 @@ public class PlayerController : MonoBehaviour
             // Stop the reload animation and reset the reloading flag
             // animator.SetBool("Reloading", false);
             isReloading = false;
-
-            // Update the reload progress to 0
-            // reloadProgress = 0f;
         }
     }
 
@@ -171,13 +167,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector3 move = transform.right * moveVector.x + transform.forward * moveVector.y;
-
-        if (!characterController.isGrounded)
-        {
-            move.y -= gravity * Time.deltaTime;
-        }
-
+        var move = transform.right * moveVector.x + transform.forward * moveVector.y;
         characterController.Move(move * moveSpeed * Time.deltaTime);
     }
 }

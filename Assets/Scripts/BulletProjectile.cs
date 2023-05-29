@@ -9,7 +9,7 @@ public class BulletProjectile : MonoBehaviour
 
     public GameObject muzzleFlash;
     public Transform muzzleFlashPosition;
-    private float _nextFireTime;
+    public float _nextFireTime;
 
     private void Update()
     {
@@ -19,20 +19,20 @@ public class BulletProjectile : MonoBehaviour
     public void Shoot()
     {
         // if (Input.GetButton("Fire1") && Time.time >= _nextFireTime)
-        if (Time.time >= _nextFireTime)
-        {
-            _nextFireTime = Time.time + fireRate;
-            var flash = Instantiate(muzzleFlash, muzzleFlashPosition);
+        // if (Time.time >= _nextFireTime)
+        // {
+        _nextFireTime = Time.time + fireRate;
+        var flash = Instantiate(muzzleFlash, muzzleFlashPosition);
 
-            var bulletHolder = Instantiate(bullet, transform.position, transform.rotation);
-            bulletHolder.transform.Rotate(Vector3.left *
-                                          90); // Sometimes needed, depends on the rotation of the Weaponholder.
+        var bulletHolder = Instantiate(bullet, transform.position, transform.rotation);
+        bulletHolder.transform.Rotate(Vector3.left *
+                                      90); // Sometimes needed, depends on the rotation of the Weaponholder.
 
-            var _rigidbody = bulletHolder.GetComponent<Rigidbody>();
-            _rigidbody.AddForce(transform.forward * bulletForce);
+        var _rigidbody = bulletHolder.GetComponent<Rigidbody>();
+        _rigidbody.AddForce(transform.forward * bulletForce);
 
-            Destroy(flash, 0.15f);
-            Destroy(bulletHolder, 3.0f);
-        }
+        Destroy(flash, 0.15f);
+        Destroy(bulletHolder, 3.0f);
+        // }
     }
 }
