@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
     private CharacterController characterController;
+    public static Vector3 playerPos;
 
     private Camera mainCamera;
     private Vector2 moveVector;
