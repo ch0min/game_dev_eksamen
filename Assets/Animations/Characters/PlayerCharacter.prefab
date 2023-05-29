@@ -2214,8 +2214,10 @@ MonoBehaviour:
   bullet: {fileID: 7435243636597645652, guid: 7db4af46d3a7cde42b6d9704f41ae4f6, type: 3}
   bulletForce: 2000
   fireRate: 0.1
+  reserveAmmo: 0
   muzzleFlash: {fileID: 5543147891660341008, guid: 42dfbf92da1e3a249890c4e4f98d041b, type: 3}
   muzzleFlashPosition: {fileID: 8503906396866488541}
+  _nextFireTime: 0
 --- !u!1 &8503906396816004553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2484,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ab559863bbd959749bb8def80217a012, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -2586,4 +2588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 5
+  moveSpeed: 3
+  bulletProjectile: {fileID: 0}
+  cameraShake: {fileID: 0}
+  bulletClip: {fileID: 0}
