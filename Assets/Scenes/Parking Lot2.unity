@@ -2137,7 +2137,7 @@ PrefabInstance:
       objectReference: {fileID: 1467163636}
     - target: {fileID: 3455413665219506514, guid: da3edd69bec62fc49996a8163f8a887a, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3455413665219506514, guid: da3edd69bec62fc49996a8163f8a887a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2295,7 +2295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4836016193371071004, guid: 85d0b4d8f4e60da4d81f839c27f7ef8d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4836016193371071004, guid: 85d0b4d8f4e60da4d81f839c27f7ef8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8233,7 +8233,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &953002701
 GameObject:
@@ -9546,6 +9546,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2839911429718294635, guid: 2137cf2a727f1364fab4bf5fb45c1219, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8181150130063514129, guid: 2137cf2a727f1364fab4bf5fb45c1219, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14172,7 +14176,7 @@ RectTransform:
   - {fileID: 1190251445}
   - {fileID: 2129076877}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

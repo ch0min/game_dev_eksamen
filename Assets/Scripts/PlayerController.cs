@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
     private CharacterController characterController;
+    public static Vector3 playerPos;
 
     private Camera mainCamera;
     private Vector2 moveVector;
@@ -21,8 +22,8 @@ public class PlayerController : MonoBehaviour
     public BulletClip bulletClip;
 
     private int currentAmmo;
-    private int magazineSize = 30;
-    private int reserveAmmo = 30;
+    private int magazineSize = 100;
+    private int reserveAmmo = 100;
     private float reloadDuration = 1.5f; // Duration of the reload action in seconds
     private bool isReloading = false;
 
