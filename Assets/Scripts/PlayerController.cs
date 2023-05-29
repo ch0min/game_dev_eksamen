@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveVector;
     private CharacterController characterController;
     private Animator animator;
+    [SerializeField]
+    private float gravity = 9.81f;
+
+    public static Vector3 playerPos;
+
 
 
     public void ModifyHealth(float amount) {
@@ -116,9 +121,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Move() {
+    private void Move()
+    {
         Vector3 move = transform.right * moveVector.x + transform.forward * moveVector.y;
+
+        if (!characterController.isGrounded)
+        {
+            move.y -= gravity * Time.deltaTime;
+        }
+
         characterController.Move(move * moveSpeed * Time.deltaTime);
     }
+
+
+
 }
-    

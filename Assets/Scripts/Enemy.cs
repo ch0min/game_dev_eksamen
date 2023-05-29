@@ -7,16 +7,19 @@ using UnityEngine.UI;
 
 
 public class Enemy : MonoBehaviour{ 
-    public GameObject deadBody;
     private float health = 100f;
-    public Slider healthBar;
-    bool created = false;
+    private Animator anim;
 
     // [FormerlySerializedAs("_fieldOfView")]
     public AIBehaviour _aiBehaviour;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Update() {
-        healthBar.value = health;
+        
     }
 
     public void ApplyDamage(float amountDamage) {
@@ -25,16 +28,15 @@ public class Enemy : MonoBehaviour{
         _aiBehaviour.canSeePlayer = true;
 
         if(health <= 0) {
-            if(!created) {
-                Instantiate(deadBody, transform.position, transform.localRotation);
-                created = true;
-            }
-
             Die();
         }
     }
 
     public void Die() {
-        Destroy(gameObject);
+        anim.SetBool("canSeePlayer", false);
+        anim.SetBool("attack", false);
+        anim.SetTrigger("Death");
+        
+        Destroy(gameObject, 3f);
     }
 }
