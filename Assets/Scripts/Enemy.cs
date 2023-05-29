@@ -6,37 +6,41 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
-public class Enemy : MonoBehaviour{ 
+public class Enemy : MonoBehaviour
+{
+    public GameObject deadBody;
     private float health = 100f;
-    private Animator anim;
+    public Slider healthBar;
+    bool created = false;
 
     // [FormerlySerializedAs("_fieldOfView")]
     public AIBehaviour _aiBehaviour;
 
-    private void Start()
+    void Update()
     {
-        anim = GetComponent<Animator>();
+        healthBar.value = health;
     }
 
-    void Update() {
-        
-    }
-
-    public void ApplyDamage(float amountDamage) {
+    public void ApplyDamage(float amountDamage)
+    {
         health -= Mathf.Abs(amountDamage);  // Might not need Mathf.Abs.
         _aiBehaviour.ChasePlayer();
         _aiBehaviour.canSeePlayer = true;
 
-        if(health <= 0) {
+        if (health <= 0)
+        {
+            if (!created)
+            {
+                Instantiate(deadBody, transform.position, transform.localRotation);
+                created = true;
+            }
+
             Die();
         }
     }
 
-    public void Die() {
-        anim.SetBool("canSeePlayer", false);
-        anim.SetBool("attack", false);
-        anim.SetTrigger("Death");
-        
-        Destroy(gameObject, 3f);
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
