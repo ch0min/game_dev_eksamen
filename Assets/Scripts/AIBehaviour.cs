@@ -169,7 +169,7 @@ public class AIBehaviour : MonoBehaviour {
             }
             else {
                 heardPlayerAI = false;
-                radiusFOV = 15f;
+                radiusFOV = 10f;
                 angleFOV = 110f;
             }
         }
