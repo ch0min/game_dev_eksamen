@@ -40,7 +40,11 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         if (Input.GetButton("Fire1")) Fire();
-        Debug.Log(currentAmmo + "/" + reserveAmmo);
+        if (Input.GetKeyDown((KeyCode.R)))
+        {
+            Debug.Log("pressed r");
+            StartCoroutine(ReloadCoroutine());
+        }
     }
 
     private void FixedUpdate()
@@ -78,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     public void Fire()
     {
-        if (currentAmmo > 0)
+        if (currentAmmo > 0 && !isReloading)
         {
             if (Time.time >= bulletProjectile._nextFireTime)
             {
@@ -87,36 +91,31 @@ public class PlayerController : MonoBehaviour
                 bulletClip.ShootClip();
                 cameraShake.Shake();
                 currentAmmo--;
-                //animator.SetTrigger("Shooting");
+                Debug.Log(currentAmmo + "/" + reserveAmmo);
             }
         }
         else
         {
+            Debug.Log("autoreload");
             StartCoroutine(ReloadCoroutine());
         }
     }
 
     private IEnumerator ReloadCoroutine()
     {
-        while (!isReloading)
+        if (!isReloading && currentAmmo < magazineSize && reserveAmmo > 0)
         {
+            Debug.Log("Reloading");
             isReloading = true;
-            // Play the reload animation
-            // animator.SetBool("Reloading", true);
-
-            // Wait for the reload duration
             yield return new WaitForSeconds(reloadDuration);
-
-            // Refill the magazine and subtract the used ammo from the reserve
             int ammoNeeded = magazineSize - currentAmmo;
             int ammoToReload = Mathf.Min(ammoNeeded, reserveAmmo);
 
             currentAmmo += ammoToReload;
             reserveAmmo -= ammoToReload;
 
-            // Stop the reload animation and reset the reloading flag
-            // animator.SetBool("Reloading", false);
             isReloading = false;
+            Debug.Log("finished reloading");
         }
     }
 
