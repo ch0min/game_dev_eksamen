@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
 {
     public GameObject deadBody;
     private float health = 100f;
-    public Slider healthBar;
     bool created = false;
 
     // [FormerlySerializedAs("_fieldOfView")]
@@ -18,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        healthBar.value = health;
+        
     }
 
     public void ApplyDamage(float amountDamage)
