@@ -7,7 +7,8 @@ public class HealthPickup : MonoBehaviour
     PlayerController player;
     [SerializeField] float healthBonus = 10f;
 
-    void Update() {
+    void Update()
+    {
         transform.Rotate(Vector3.up, 100 * Time.deltaTime);
     }
 
@@ -18,7 +19,10 @@ public class HealthPickup : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Destroy(gameObject);
-        player.ModifyHealth(healthBonus);
+        if (col.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            player.ModifyHealth(healthBonus);
+        }
     }
 }

@@ -9,7 +9,7 @@ public class BarrelExplode : MonoBehaviour
     public GameObject explosionEffect;
     public float blastRadius = 5f;
     public bool exploded = false;
-    public LayerMask targetLayerMask = new LayerMask();
+    // public LayerMask targetLayerMask = new LayerMask();
     private Material material;
 
     public void Explode()
@@ -25,7 +25,7 @@ public class BarrelExplode : MonoBehaviour
             material.color = Color.gray;
 
             //kill enemies in blast radius
-            Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius, targetLayerMask);
+            Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius/*,  targetLayerMask */);
             foreach (var o in objectsToExplode)
             {
                 if (o.CompareTag("Enemy"))
@@ -36,6 +36,7 @@ public class BarrelExplode : MonoBehaviour
                 if (o.CompareTag("Player"))
                 {
                     //TODO: implement player apply damage
+                    Debug.Log("Player apply damage");
                     o.gameObject.GetComponent<PlayerController>().ModifyHealth(-10);
 
                 }
