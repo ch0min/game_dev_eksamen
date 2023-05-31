@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Parking Lot2.unity
+    guid: 6b462e7a5430d5047b3b6e6e46b40f71
+  - enabled: 1
+    path: Assets/Scenes/Night Club.unity
+    guid: c63b7209dac084224b4df0d5002c755a
   m_configObjects: {}
