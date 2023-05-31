@@ -59,7 +59,7 @@ public class AIBehaviour : MonoBehaviour
     {
         if (!navAgent.isActiveAndEnabled) return;
 
-        if (!canSeePlayer && !memorizesPlayerAI)
+        if (!canSeePlayer && !memorizesPlayerAI && moveSpots != null)
         {
             Patrol();
             NoiseCheck();
@@ -194,7 +194,7 @@ public class AIBehaviour : MonoBehaviour
     }
 
     private void Patrol()
-    {
+    { 
         if (!navAgent.pathPending && navAgent.remainingDistance < 0.5f)
         {
             waitTime -= Time.deltaTime;
