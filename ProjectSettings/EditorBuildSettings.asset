@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Night Club.unity
     guid: c63b7209dac084224b4df0d5002c755a
+  - enabled: 1
+    path: Assets/Scenes/Office Scene.unity
+    guid: 7413d8fa57b7b45228eeb2f38c5f956b
   m_configObjects: {}

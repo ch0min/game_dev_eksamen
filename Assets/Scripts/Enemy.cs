@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public GameObject deadBody;
+    [SerializeField]
     private float health = 100f;
     bool created = false;
 
