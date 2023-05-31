@@ -59,7 +59,7 @@ public class AIBehaviour : MonoBehaviour
     {
         if (!navAgent.isActiveAndEnabled) return;
 
-        if (!canSeePlayer && !memorizesPlayerAI && moveSpots != null)
+        if (!canSeePlayer && !memorizesPlayerAI)
         {
             Patrol();
             NoiseCheck();
