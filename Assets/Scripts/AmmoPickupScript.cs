@@ -19,7 +19,10 @@ public class AmmoPickupScript : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Destroy(gameObject);
-        player.AddAmmo(AmmoAmount);
+        if (col.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            player.AddAmmo(AmmoAmount);
+        }
     }
 }
