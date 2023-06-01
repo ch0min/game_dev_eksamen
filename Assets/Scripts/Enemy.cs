@@ -15,22 +15,14 @@ public class Enemy : MonoBehaviour
 
     // [FormerlySerializedAs("_fieldOfView")]
     public AIBehaviour _aiBehaviour;
-
-    void Update()
-    {
-        
-    }
-
-    public void ApplyDamage(float amountDamage)
-    {
-        health -= Mathf.Abs(amountDamage);  // Might not need Mathf.Abs.
+    
+    public void ApplyDamage(float amountDamage) {
+        health -= Mathf.Abs(amountDamage); // Might not need Mathf.Abs.
         _aiBehaviour.ChasePlayer();
         _aiBehaviour.canSeePlayer = true;
 
-        if (health <= 0)
-        {
-            if (!created)
-            {
+        if (health <= 0) {
+            if (!created) {
                 Instantiate(deadBody, transform.position, transform.localRotation);
                 created = true;
             }
@@ -39,8 +31,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
+    public void Die() {
         Destroy(gameObject);
     }
 }
+

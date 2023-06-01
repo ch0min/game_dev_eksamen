@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 public class EnemyDeadSFX : MonoBehaviour
 {
     public AudioSource enemyDeadSFX;
-    
 
     void Start() {
         enemyDeadSFX.Play();

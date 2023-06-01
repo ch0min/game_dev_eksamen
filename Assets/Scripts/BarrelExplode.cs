@@ -12,10 +12,10 @@ public class BarrelExplode : MonoBehaviour
     // public LayerMask targetLayerMask = new LayerMask();
     private Material material;
 
-    public void Explode()
-    {
-        if (!exploded)
-        {
+    public AudioSource explosion;
+
+    public void Explode() {
+        if (!exploded) {
             exploded = true;
             //spawn explode effect
             Destroy(Instantiate(explosionEffect, transform.position, Quaternion.identity), 2.0f);
@@ -23,26 +23,23 @@ public class BarrelExplode : MonoBehaviour
             //change barrel color
             material = GetComponent<Renderer>().material;
             material.color = Color.gray;
+            explosion.Play();
 
             //kill enemies in blast radius
-            Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius/*,  targetLayerMask */);
-            foreach (var o in objectsToExplode)
-            {
-                if (o.CompareTag("Enemy"))
-                {
+            Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, blastRadius /*,  targetLayerMask */);
+            foreach (var o in objectsToExplode) {
+                if (o.CompareTag("Enemy")) {
                     o.gameObject.GetComponent<Enemy>().ApplyDamage(100);
                 }
 
-                if (o.CompareTag("Player"))
-                {
+                if (o.CompareTag("Player")) {
                     //TODO: implement player apply damage
                     Debug.Log("Player apply damage");
                     o.gameObject.GetComponent<PlayerController>().ModifyHealth(-10);
 
                 }
 
-                if (o.CompareTag("BarrelHit") && !o.gameObject.GetComponent<BarrelExplode>().exploded)
-                {
+                if (o.CompareTag("BarrelHit") && !o.gameObject.GetComponent<BarrelExplode>().exploded) {
                     o.gameObject.GetComponent<BarrelExplode>().Explode();
                 }
             }
@@ -55,8 +52,8 @@ public class BarrelExplode : MonoBehaviour
             rigidBody.freezeRotation = false;
         }
     }
-    void OnDrawGizmos()
-    {
+
+    void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, blastRadius);
     }
