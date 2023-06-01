@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     public static Vector3 playerPos;
     private float gravity = 9.81f;
+    public GameObject deadBody;
+    bool created = false;
 
     private Camera mainCamera;
     private Vector2 moveVector;
@@ -76,12 +78,20 @@ public class PlayerController : MonoBehaviour
     {
         health += amount;
         if (health > 100) health = 100;
-        if (health <= 0) Die();
+        if (health <= 0)
+        {
+            if (!created)
+            {
+                Instantiate(deadBody, transform.position, transform.localRotation);
+                created = true;
+            }
+
+            Die();
+        }
     }
 
     public void Die()
     {
-        //TODO: add ragdoll instead of Destroy(gameObject)
         Destroy(gameObject);
     }
 
