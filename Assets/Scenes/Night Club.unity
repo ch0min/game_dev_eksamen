@@ -38011,6 +38011,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1460910382
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91588686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!1 &1463951060
 GameObject:
   m_ObjectHideFlags: 0
@@ -51577,7 +51591,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3421437465627459172, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -3421437465627459172, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_PlayOnAwake
@@ -55255,7 +55269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 81.69
+      value: 81.94
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.y
