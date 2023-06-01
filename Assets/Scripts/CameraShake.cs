@@ -13,7 +13,7 @@ public class CameraShake : MonoBehaviour
     public float shakeAmount = 0.7f;
     public float decreaseFactor = 1.0f;
 
-    private Vector3 originalPos;
+    public Vector3 originalPos;
 
     private void Awake()
     {

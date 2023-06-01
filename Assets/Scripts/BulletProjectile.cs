@@ -11,17 +11,19 @@ public class BulletProjectile : MonoBehaviour
     public Transform muzzleFlashPosition;
     public float _nextFireTime;
 
-    private void Update()
-    {
+    public AudioSource bulletSFX;
+    public AudioSource bulletClipSFX;
+
+    private void Update() {
         // Shoot();
     }
 
-    public void Shoot()
-    {
+    public void Shoot() {
         // if (Input.GetButton("Fire1") && Time.time >= _nextFireTime)
         // if (Time.time >= _nextFireTime)
         // {
         _nextFireTime = Time.time + fireRate;
+        bulletSFX.Play();
         var flash = Instantiate(muzzleFlash, muzzleFlashPosition);
 
         var bulletHolder = Instantiate(bullet, transform.position, transform.rotation);
@@ -30,6 +32,7 @@ public class BulletProjectile : MonoBehaviour
 
         var _rigidbody = bulletHolder.GetComponent<Rigidbody>();
         _rigidbody.AddForce(transform.forward * bulletForce);
+        bulletClipSFX.Play();
 
         Destroy(flash, 0.15f);
         Destroy(bulletHolder, 3.0f);
