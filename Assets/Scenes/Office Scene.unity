@@ -4943,6 +4943,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1164655444}
     - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 5263696689018495551, guid: cf1cf54cc020c5348b46be590a1ef014, type: 3}
+    - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: bulletClip
       value: 
       objectReference: {fileID: 1453455884}
@@ -7497,7 +7501,11 @@ PrefabInstance:
     - target: {fileID: 2683038127407583317, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
       propertyPath: deadBody
       value: 
-      objectReference: {fileID: 3054861261270362871, guid: 55bc6ebd3dbbe28ac83b459b45b54373, type: 3}
+      objectReference: {fileID: 3054861261270362871, guid: 7c44eb5319dfc747aa078d8fb00a1bcb, type: 3}
+    - target: {fileID: 2683038127407583338, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
+      propertyPath: playerRef
+      value: 
+      objectReference: {fileID: 1394340013}
     - target: {fileID: 2683038127407583338, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
       propertyPath: moveSpots.Array.size
       value: 1
