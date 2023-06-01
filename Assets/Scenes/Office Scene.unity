@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: moveSpots.Array.size
       value: 6
@@ -870,6 +874,10 @@ PrefabInstance:
       propertyPath: moveSpots.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7250476697880118259, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 2392411720588273690, guid: f3f064bfb7d9fa64aacfc15a2f0a9163, type: 3}
     - target: {fileID: 7520932168949867319, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_Name
       value: EnemyOffice1(Vampire)
@@ -1023,6 +1031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: moveSpots.Array.size
       value: 4
@@ -2327,6 +2339,10 @@ PrefabInstance:
       propertyPath: moveSpots.Array.data[1]
       value: 
       objectReference: {fileID: 751183987}
+    - target: {fileID: 7250476697880118259, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 2392411720588273690, guid: f3f064bfb7d9fa64aacfc15a2f0a9163, type: 3}
     - target: {fileID: 7520932168949867319, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_Name
       value: EnemyOffice1(Vampire) (2)
@@ -2401,6 +2417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire) (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: playerRef
       value: 
@@ -3001,6 +3021,10 @@ PrefabInstance:
       propertyPath: moveSpots.Array.data[2]
       value: 
       objectReference: {fileID: 409522265}
+    - target: {fileID: 7250476697880118259, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 2392411720588273690, guid: f3f064bfb7d9fa64aacfc15a2f0a9163, type: 3}
     - target: {fileID: 7520932168949867319, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_Name
       value: EnemyOffice1(Vampire) (1)
@@ -4809,6 +4833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: moveSpots.Array.size
       value: 4
@@ -7466,6 +7494,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2683038127407583317, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 3054861261270362871, guid: 55bc6ebd3dbbe28ac83b459b45b54373, type: 3}
     - target: {fileID: 2683038127407583338, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
       propertyPath: moveSpots.Array.size
       value: 1
@@ -13563,6 +13595,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2683038127407583317, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 3054861261270362871, guid: 55bc6ebd3dbbe28ac83b459b45b54373, type: 3}
     - target: {fileID: 2683038127407583338, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
       propertyPath: moveSpots.Array.size
       value: 1
@@ -16914,6 +16950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: playerRef
       value: 
@@ -24629,6 +24669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire) (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: playerRef
       value: 
@@ -31620,6 +31664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: moveSpots.Array.data[0]
       value: 
@@ -35374,6 +35422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyOffice2(FastVampire) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 816262339040663010, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 7765061387777078574, guid: d1c3dcf050c6fc549867122c8fab4614, type: 3}
     - target: {fileID: 816262339040663021, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: playerRef
       value: 
@@ -37269,6 +37321,10 @@ PrefabInstance:
       propertyPath: moveSpots.Array.data[1]
       value: 
       objectReference: {fileID: 2110210367}
+    - target: {fileID: 7250476697880118259, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 2392411720588273690, guid: f3f064bfb7d9fa64aacfc15a2f0a9163, type: 3}
     - target: {fileID: 7520932168949867319, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_Name
       value: EnemyOffice1(Vampire) (3)
