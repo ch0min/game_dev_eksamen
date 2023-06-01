@@ -1856,10 +1856,10 @@ GameObject:
   - component: {fileID: 5029678085414727275}
   - component: {fileID: 2787653891402384223}
   - component: {fileID: 6990859982888152499}
-  - component: {fileID: 2802392064206346458}
-  - component: {fileID: 6023260889438140630}
+  - component: {fileID: 3955329830092357962}
+  - component: {fileID: 4861766878759496505}
   m_Layer: 7
-  m_Name: PlayerCharacter - Ragdoll - Size 1
+  m_Name: PlayerCharacter - Ragdoll - Size 3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1874,7 +1874,7 @@ Transform:
   m_GameObject: {fileID: 5263696689018495551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -56.778828, y: 0.073964596, z: 1.3624985}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6194300433924037298}
@@ -1938,7 +1938,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2802392064206346458
+--- !u!114 &3955329830092357962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1950,8 +1950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e35ec431de41dfa71b9670472957fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDeadSFX: {fileID: 6023260889438140630}
---- !u!82 &6023260889438140630
+  playerDeadSFX: {fileID: 4861766878759496505}
+--- !u!82 &4861766878759496505
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

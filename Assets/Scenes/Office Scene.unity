@@ -2568,7 +2568,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 230184673342062055, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 545669565594560703, guid: c0980b2a7d0a83946b85704e7059126e, type: 3}
       propertyPath: m_Name
@@ -5254,7 +5254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.46
+      value: -64.29
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5262,7 +5262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.460003
+      value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14348,6 +14348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ded4a2f612997a4ea4eff7e80932e39, type: 3}
+--- !u!1 &739012736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3025707736344587526, guid: f23c86f8b28eaba4e8c8fcdb453faeff, type: 3}
+  m_PrefabInstance: {fileID: 730906980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &742108209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18020,7 +18025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899040258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.77, y: -29.283318, z: 27.77}
+  m_LocalPosition: {x: -54.77, y: -29.283318, z: 21.4}
   m_LocalScale: {x: 19.130276, y: 4.3834, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18136,7 +18141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundTriggerSFX: {fileID: 899040260}
-  _enemy: {fileID: 1115541212}
+  _enemy: {fileID: 739012736}
 --- !u!65 &899040262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36193,7 +36198,7 @@ Transform:
   - {fileID: 959813052}
   - {fileID: 1622574459}
   m_Father: {fileID: 2078642119}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1949920137
 PrefabInstance:
@@ -38508,6 +38513,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 22874465}
+  - {fileID: 1944815571}
   - {fileID: 1139004089}
   - {fileID: 1793323296}
   - {fileID: 1054651122}
@@ -38517,7 +38523,6 @@ Transform:
   - {fileID: 1238961919}
   - {fileID: 770118054}
   - {fileID: 299191712}
-  - {fileID: 1944815571}
   - {fileID: 1961771965}
   - {fileID: 1493029282}
   - {fileID: 320620283}

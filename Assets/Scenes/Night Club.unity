@@ -55211,9 +55211,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1171794081}
+    - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: deadBody
+      value: 
+      objectReference: {fileID: 5263696689018495551, guid: c42b08e315b244649bd1cb1ed359d66f, type: 3}
     - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: moveSpeed
       value: 7
@@ -55230,6 +55238,10 @@ PrefabInstance:
       propertyPath: cameraShake
       value: 
       objectReference: {fileID: 1195823731}
+    - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: bulletProjectile
       value: 
@@ -55272,7 +55284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.46
+      value: 81.87
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.y
@@ -55280,7 +55292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.76
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalRotation.w

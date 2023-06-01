@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] public float health = 100f;
+    [SerializeField]
+    public float health = 100f;
 
-    [SerializeField] private float moveSpeed = 1;
+    [SerializeField]
+    private float moveSpeed = 1;
 
     private Animator animator;
     private CharacterController characterController;
@@ -33,8 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource reloadSFX;
 
-    private void Start()
-    {
+    private void Start() {
         ammoText = GameObject.Find("AmmoText").GetComponent<Text>();
         Debug.Log(ammoText);
         characterController = GetComponent<CharacterController>();
@@ -44,37 +45,32 @@ public class PlayerController : MonoBehaviour
         currentAmmo = magazineSize;
     }
 
-    private void Update()
-    {
+    private void Update() {
         Move();
         if (Input.GetButton("Fire1")) {
             Fire();
         }
-        else
-        {
+        else {
             // Reset shakeDuration when the button is released
             cameraShake.shakeDuration = 1f;
             cameraShake.camTransform.localPosition = cameraShake.originalPos;
-        
-    }
-        
-        
-        if (Input.GetKeyDown((KeyCode.R)))
-        {
+
+        }
+
+
+        if (Input.GetKeyDown((KeyCode.R))) {
             Debug.Log("pressed r");
             StartCoroutine(ReloadCoroutine());
         }
         ammoText.text = currentAmmo + "/" + reserveAmmo;
     }
 
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() {
         var cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         var groundPlane = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
 
-        if (groundPlane.Raycast(cameraRay, out rayLength))
-        {
+        if (groundPlane.Raycast(cameraRay, out rayLength)) {
             var pointToLook = cameraRay.GetPoint(rayLength);
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
 
@@ -82,40 +78,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void AddAmmo(int amount)
-    {
+    public void AddAmmo(int amount) {
         reserveAmmo += amount;
     }
 
-    public void ModifyHealth(float amount)
-    {
+    public void ModifyHealth(float amount) {
         health += amount;
         if (health > 100) health = 100;
-        if (health <= 0)
-        {
-            if (!created)
-            {
+        if (health <= 0) {
+            if (!created) {
                 Instantiate(deadBody, transform.position, transform.localRotation);
                 created = true;
             }
-
             Die();
         }
     }
 
-    public void Die()
-    {
+    public void Die() {
         Destroy(gameObject);
     }
 
-    public void Fire()
-    {
-        if (currentAmmo > 0 && !isReloading)
-        {
+    public void Fire() {
+        if (currentAmmo > 0 && !isReloading) {
             cameraShake.Shake();
 
-            if (Time.time >= bulletProjectile._nextFireTime)
-            {
+            if (Time.time >= bulletProjectile._nextFireTime) {
                 bulletProjectile._nextFireTime = Time.time + bulletProjectile.fireRate;
                 bulletProjectile.Shoot();
                 bulletClip.ShootClip();
@@ -123,17 +110,14 @@ public class PlayerController : MonoBehaviour
                 Debug.Log(currentAmmo + "/" + reserveAmmo);
             }
         }
-        else
-        {
+        else {
             Debug.Log("autoreload");
             StartCoroutine(ReloadCoroutine());
         }
     }
 
-    private IEnumerator ReloadCoroutine()
-    {
-        if (!isReloading && currentAmmo < magazineSize && reserveAmmo > 0)
-        {
+    private IEnumerator ReloadCoroutine() {
+        if (!isReloading && currentAmmo < magazineSize && reserveAmmo > 0) {
             Debug.Log("Reloading");
             isReloading = true;
             yield return new WaitForSeconds(reloadDuration);
@@ -150,8 +134,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
+    public void OnMove(InputAction.CallbackContext context) {
         moveVector = context.ReadValue<Vector2>();
 
         if (Keyboard.current != null && Keyboard.current.wKey.wasPressedThisFrame)
@@ -195,12 +178,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRolling", false);
     }
 
-    private void Move()
-    {
+    private void Move() {
         Vector3 move = transform.right * moveVector.x + transform.forward * moveVector.y;
 
-        if (!characterController.isGrounded)
-        {
+        if (!characterController.isGrounded) {
             move.y -= gravity * Time.deltaTime;
         }
 
