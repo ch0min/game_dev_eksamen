@@ -13,6 +13,8 @@ public class DoorOpenScript : MonoBehaviour
     
     private bool isOpen;
 
+    public AudioSource doorOpenSFX;
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Player") && !isOpen)
@@ -20,6 +22,7 @@ public class DoorOpenScript : MonoBehaviour
         doorRight.transform.Translate(Vector3.right*doorOpenAmount);
         doorLeft.transform.Translate(Vector3.left*doorOpenAmount);
         isOpen = true;
+        doorOpenSFX.Play();
         }
     }
 }

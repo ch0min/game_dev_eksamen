@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private bool isReloading = false;
     public Text ammoText;
 
+    public AudioSource reloadSFX;
+
     private void Start()
     {
         ammoText = GameObject.Find("AmmoText").GetComponent<Text>();
@@ -45,7 +47,18 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-        if (Input.GetButton("Fire1")) Fire();
+        if (Input.GetButton("Fire1")) {
+            Fire();
+        }
+        else
+        {
+            // Reset shakeDuration when the button is released
+            cameraShake.shakeDuration = 1f;
+            cameraShake.camTransform.localPosition = cameraShake.originalPos;
+        
+    }
+        
+        
         if (Input.GetKeyDown((KeyCode.R)))
         {
             Debug.Log("pressed r");
@@ -99,12 +112,13 @@ public class PlayerController : MonoBehaviour
     {
         if (currentAmmo > 0 && !isReloading)
         {
+            cameraShake.Shake();
+
             if (Time.time >= bulletProjectile._nextFireTime)
             {
                 bulletProjectile._nextFireTime = Time.time + bulletProjectile.fireRate;
                 bulletProjectile.Shoot();
                 bulletClip.ShootClip();
-                cameraShake.Shake();
                 currentAmmo--;
                 Debug.Log(currentAmmo + "/" + reserveAmmo);
             }
@@ -130,6 +144,7 @@ public class PlayerController : MonoBehaviour
             reserveAmmo -= ammoToReload;
 
             isReloading = false;
+            reloadSFX.Play();
             Debug.Log("finished reloading");
         }
     }
