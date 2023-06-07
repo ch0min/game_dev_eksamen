@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float gravity = 9.81f;
     public GameObject deadBody;
     bool created = false;
+    public GameObject DeathCanvas;
 
     private Camera mainCamera;
     private Vector2 moveVector;
@@ -96,6 +97,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die() {
         Destroy(gameObject);
+        DeathCanvas.SetActive(true);
+        
     }
 
     public void Fire() {
