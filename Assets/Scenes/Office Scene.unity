@@ -5395,6 +5395,10 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 707414246030619968, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 707414246030619970, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: ammoText
       value: 
@@ -41428,9 +41432,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.8769655, z: 0}
 --- !u!82 &2138298981
 AudioSource:
   m_ObjectHideFlags: 0

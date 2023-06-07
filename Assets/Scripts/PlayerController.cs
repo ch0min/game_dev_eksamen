@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     bool created = false;
     public GameObject DeathCanvas;
 
+    
     private Camera mainCamera;
     private Vector2 moveVector;
     private Rigidbody rigidBody;
