@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 91538a0cb3b27e742888fb37f8507485, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -14900,7 +14900,6 @@ GameObject:
   - component: {fileID: 425686524}
   - component: {fileID: 425686523}
   - component: {fileID: 425686522}
-  - component: {fileID: 425686526}
   - component: {fileID: 425686525}
   m_Layer: 0
   m_Name: Quit
@@ -15065,19 +15064,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &425686526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425686520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a047530df74014eb114c95631e65b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSFX: {fileID: 751108841}
 --- !u!1 &441311004
 GameObject:
   m_ObjectHideFlags: 0
@@ -26109,7 +26095,6 @@ GameObject:
   - component: {fileID: 1469018121}
   - component: {fileID: 1469018120}
   - component: {fileID: 1469018119}
-  - component: {fileID: 1469018123}
   - component: {fileID: 1469018122}
   m_Layer: 0
   m_Name: Back
@@ -26286,19 +26271,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1469018123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469018117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a047530df74014eb114c95631e65b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSFX: {fileID: 751108841}
 --- !u!1 &1513466389
 GameObject:
   m_ObjectHideFlags: 0
@@ -26348,7 +26320,6 @@ GameObject:
   - component: {fileID: 1538788311}
   - component: {fileID: 1538788310}
   - component: {fileID: 1538788309}
-  - component: {fileID: 1538788312}
   - component: {fileID: 1538788313}
   m_Layer: 0
   m_Name: Options
@@ -26496,19 +26467,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538788307}
   m_CullTransparentMesh: 1
---- !u!114 &1538788312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538788307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a047530df74014eb114c95631e65b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSFX: {fileID: 751108841}
 --- !u!114 &1538788313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36513,7 +36471,6 @@ GameObject:
   - component: {fileID: 1740683300}
   - component: {fileID: 1740683299}
   - component: {fileID: 1740683298}
-  - component: {fileID: 1740683301}
   - component: {fileID: 1740683302}
   m_Layer: 0
   m_Name: Start Game
@@ -36649,19 +36606,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740683296}
   m_CullTransparentMesh: 1
---- !u!114 &1740683301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1740683296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a047530df74014eb114c95631e65b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnSFX: {fileID: 751108841}
 --- !u!114 &1740683302
 MonoBehaviour:
   m_ObjectHideFlags: 0
