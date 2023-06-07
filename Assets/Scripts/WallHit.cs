@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class WallHit : MonoBehaviour
 {
-    void Update()
-    {
+    void Update() {
         Destroy(gameObject, 0.2f);
     }
 }

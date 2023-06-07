@@ -11,15 +11,13 @@ public class HealthBarScript : MonoBehaviour
     PlayerController player;
 
 
-    private void Start()
-    {
+    private void Start() {
         healthBar = GetComponent<Image>();
         player = FindObjectOfType<PlayerController>();
 
     }
 
-    private void Update()
-    {
+    private void Update() {
         currentHealth = player.health;
         healthBar.fillAmount = currentHealth / maxHealth;
     }

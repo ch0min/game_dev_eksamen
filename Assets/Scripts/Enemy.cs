@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     // [FormerlySerializedAs("_fieldOfView")]
     public AIBehaviour _aiBehaviour;
-    
+
     public void ApplyDamage(float amountDamage) {
         health -= Mathf.Abs(amountDamage); // Might not need Mathf.Abs.
         _aiBehaviour.ChasePlayer();
@@ -35,4 +35,3 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 }
-

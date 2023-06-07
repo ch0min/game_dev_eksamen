@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start() {
         ammoText = GameObject.Find("AmmoText").GetComponent<Text>();
-        Debug.Log(ammoText);
         characterController = GetComponent<CharacterController>();
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = FindObjectOfType<Camera>();
@@ -58,10 +57,8 @@ public class PlayerController : MonoBehaviour
             cameraShake.camTransform.localPosition = cameraShake.originalPos;
 
         }
-
-
+        
         if (Input.GetKeyDown((KeyCode.R))) {
-            Debug.Log("pressed r");
             StartCoroutine(ReloadCoroutine());
         }
         ammoText.text = currentAmmo + "/" + reserveAmmo;
@@ -111,18 +108,15 @@ public class PlayerController : MonoBehaviour
                 bulletProjectile.Shoot();
                 bulletClip.ShootClip();
                 currentAmmo--;
-                Debug.Log(currentAmmo + "/" + reserveAmmo);
             }
         }
         else {
-            Debug.Log("autoreload");
             StartCoroutine(ReloadCoroutine());
         }
     }
 
     private IEnumerator ReloadCoroutine() {
         if (!isReloading && currentAmmo < magazineSize && reserveAmmo > 0) {
-            Debug.Log("Reloading");
             isReloading = true;
             yield return new WaitForSeconds(reloadDuration);
             int ammoNeeded = magazineSize - currentAmmo;
@@ -133,7 +127,6 @@ public class PlayerController : MonoBehaviour
 
             isReloading = false;
             reloadSFX.Play();
-            Debug.Log("finished reloading");
         }
     }
 
@@ -142,29 +135,10 @@ public class PlayerController : MonoBehaviour
         moveVector = context.ReadValue<Vector2>();
 
         if (Keyboard.current != null && Keyboard.current.wKey.wasPressedThisFrame)
-            // Debug.Log("D was pressed!");
             animator.SetBool("isWalking", true);
         else
             animator.SetBool("isWalking", false);
-        // if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame) {
-        //     // Debug.Log("D was pressed!");
-        //     animator.SetBool("isRolling", true);
-        // }
-        // else {
-        //     animator.SetBool("isRolling", false);
-        // }
-        /*if(moveVector.magnitude > 0)
-        {
-            animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
-            
-        } */
-
         if (Keyboard.current != null && Keyboard.current.dKey.wasPressedThisFrame)
-            // Debug.Log("D was pressed!");
             animator.SetBool("isRightStrafe", true);
         else
             animator.SetBool("isRightStrafe", false);
@@ -176,10 +150,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isBackwards", true);
         else
             animator.SetBool("isBackwards", false);
-        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
-            animator.SetBool("isRolling", true);
-        else
-            animator.SetBool("isRolling", false);
     }
 
     private void Move() {

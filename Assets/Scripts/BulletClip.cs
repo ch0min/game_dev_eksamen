@@ -10,17 +10,7 @@ public class BulletClip : MonoBehaviour
     private float nextFiretime;
 
 
-    private void Update()
-    {
-        // ShootClip();
-    }
-
-
-    public void ShootClip()
-    {
-        // if (Input.GetButton("Fire1") && Time.time >= nextFiretime)
-        // if (Time.time >= nextFiretime)
-        // {
+    public void ShootClip() {
         nextFiretime = Time.time + fireRate;
 
         GameObject bulletHolder;

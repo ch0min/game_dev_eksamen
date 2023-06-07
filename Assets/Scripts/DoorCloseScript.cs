@@ -11,12 +11,11 @@ public class DoorCloseScript : MonoBehaviour
 
     private bool isOpen = true;
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (isOpen){
-        doorRight.transform.Translate(Vector3.left);
-        doorLeft.transform.Translate(Vector3.right);
-        isOpen = false;
+    void OnTriggerEnter(Collider col) {
+        if (isOpen) {
+            doorRight.transform.Translate(Vector3.left);
+            doorLeft.transform.Translate(Vector3.right);
+            isOpen = false;
         }
     }
 }
