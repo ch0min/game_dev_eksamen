@@ -19,6 +19,6 @@ public class RestartGame : MonoBehaviour
 
     public void RestartTheGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Parking Lot");
     }
 }
