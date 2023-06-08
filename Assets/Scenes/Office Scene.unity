@@ -26020,7 +26020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundTriggerSFX: {fileID: 1326389907}
-  _enemy: {fileID: 1115541212}
+  _enemy: {fileID: 775469159}
 --- !u!65 &1326389909
 BoxCollider:
   m_ObjectHideFlags: 0
