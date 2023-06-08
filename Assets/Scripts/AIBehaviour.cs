@@ -190,15 +190,12 @@ public class AIBehaviour : MonoBehaviour
         }
     }
 
-    private IEnumerator OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    private IEnumerator OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")) {
             PlayerController player = other.GetComponent<PlayerController>();
-            while (player != null)
-            {
+            while (player != null) {
                 player.ModifyHealth(damage);
-                yield return new WaitForSeconds(2.5f);
+                yield return new WaitForSeconds(1.5f);
             }
         }
     }

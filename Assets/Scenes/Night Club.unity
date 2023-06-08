@@ -30240,8 +30240,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6720478652700352178, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
+      propertyPath: playerRef
+      value: 
+      objectReference: {fileID: 91588686}
+    - target: {fileID: 6720478652700352178, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
       propertyPath: radiusFOV
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720478652700352178, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
+      propertyPath: enemyAttackSFX
+      value: 
+      objectReference: {fileID: 1576772048}
+    - target: {fileID: 6720478652700352180, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
+      propertyPath: m_Height
+      value: 2.878996
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720478652700352180, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
+      propertyPath: m_Center.y
+      value: 1.2894974
       objectReference: {fileID: 0}
     - target: {fileID: 6720478652700352184, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
       propertyPath: health
@@ -40705,6 +40721,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6209212015361662873, guid: f9bdd6dd12a32974ab80fde36b94e4b1, type: 3}
   m_PrefabInstance: {fileID: 135307855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1576772040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5873404661297439713, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
+  m_PrefabInstance: {fileID: 1177642517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1576772048
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576772040}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b15890178d2ff734790f1db126f02a7e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1578947941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55590,7 +55707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 707414246030619968, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_Mass
-      value: 80
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 707414246030619968, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_AngularDrag
