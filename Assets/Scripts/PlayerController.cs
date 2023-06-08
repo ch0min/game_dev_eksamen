@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     bool created = false;
     public GameObject DeathCanvas;
 
-    
+
     private Camera mainCamera;
     private Vector2 moveVector;
     private Rigidbody rigidBody;
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             cameraShake.camTransform.localPosition = cameraShake.originalPos;
 
         }
-        
+
         if (Input.GetKeyDown((KeyCode.R))) {
             StartCoroutine(ReloadCoroutine());
         }
@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
     public void Die() {
         Destroy(gameObject);
         DeathCanvas.SetActive(true);
-        
     }
 
     public void Fire() {
