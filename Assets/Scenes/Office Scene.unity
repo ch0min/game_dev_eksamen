@@ -2999,6 +2999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Container_01_Blue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 116448, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 446728, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5753,7 +5757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 707414246030619968, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_Mass
-      value: 800
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 707414246030619968, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_AngularDrag
@@ -5809,7 +5813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.33
+      value: -33.9
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5817,7 +5821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.97
+      value: 23.44
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10852,6 +10856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate_15
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 33b904e8d80028b4fa75cff29015a59b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 33b904e8d80028b4fa75cff29015a59b, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -10977,6 +10985,10 @@ PrefabInstance:
     - target: {fileID: 102886, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
       propertyPath: m_Name
       value: Container_02_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 102886, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 450782, guid: 2f3eeb9b037e853489950df7ec0c4eb2, type: 3}
       propertyPath: m_RootOrder
@@ -23165,7 +23177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1115231880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26700,7 +26712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -28636,6 +28648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Container_01_Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 116448, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 446728, guid: 8795553cb16bf3940892b7adf8761504, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -29427,6 +29443,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
       propertyPath: m_Name
       value: Crate_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef2b61bb60e04743a3ffe30a9c6b853, type: 3}
       propertyPath: m_RootOrder
@@ -30895,6 +30915,10 @@ PrefabInstance:
     - target: {fileID: 152222, guid: 34b8a5bfe71cc1844b2d95a6853d2630, type: 3}
       propertyPath: m_Name
       value: Storage_Rack_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 152222, guid: 34b8a5bfe71cc1844b2d95a6853d2630, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 475310, guid: 34b8a5bfe71cc1844b2d95a6853d2630, type: 3}
       propertyPath: m_RootOrder
@@ -34094,6 +34118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate_11
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5df12011a80f85641b46a20883d36c26, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5df12011a80f85641b46a20883d36c26, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -35398,8 +35426,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190227
-  m_fontColor: {r: 0.5754717, g: 0, b: 0, a: 1}
+    rgba: 4292467161
+  m_fontColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -43265,6 +43293,10 @@ PrefabInstance:
     - target: {fileID: 152222, guid: 34b8a5bfe71cc1844b2d95a6853d2630, type: 3}
       propertyPath: m_Name
       value: Storage_Rack_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 152222, guid: 34b8a5bfe71cc1844b2d95a6853d2630, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 475310, guid: 34b8a5bfe71cc1844b2d95a6853d2630, type: 3}
       propertyPath: m_RootOrder
