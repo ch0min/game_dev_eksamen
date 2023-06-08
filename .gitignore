@@ -70,3 +70,5 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Prefabs/Nature/SimpleNaturePack/SimpleNaturePack_2020.3_HDRP_v1.23.unitypackage.meta
+Assets/Prefabs/Nature/SimpleNaturePack/SimpleNaturePack_2020.3_URP_v1.23.unitypackage.meta
