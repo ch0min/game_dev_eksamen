@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float health = 100f;
     bool created = false;
+    
+    public GameObject WonCanvas;
 
     // [FormerlySerializedAs("_fieldOfView")]
     public AIBehaviour _aiBehaviour;
@@ -28,10 +30,16 @@ public class Enemy : MonoBehaviour
             }
 
             Die();
+            Won();
         }
     }
 
     public void Die() {
         Destroy(gameObject);
+    }
+    
+    public void Won() {
+        Destroy(gameObject);
+        WonCanvas.SetActive(true);
     }
 }
