@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158052883372202, guid: b3760008fe34d4e339d2e0c241afdadb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4680207322652306, guid: b3760008fe34d4e339d2e0c241afdadb, type: 3}
       propertyPath: m_RootOrder
@@ -692,7 +692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158052883372202, guid: b3760008fe34d4e339d2e0c241afdadb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4680207322652306, guid: b3760008fe34d4e339d2e0c241afdadb, type: 3}
       propertyPath: m_RootOrder
@@ -1597,8 +1597,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4240510926b1bf347897b5fcd757f91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadBody: {fileID: 0}
+  deadBody: {fileID: 8093275406101336142, guid: fd04c606828093c438638ab572b0a6c1, type: 3}
   health: 100
+  WonCanvas: {fileID: 0}
   _aiBehaviour: {fileID: 1114602365}
 --- !u!114 &1114602365
 MonoBehaviour:
@@ -2193,7 +2194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 097ae5674d5ccbe40aacf506ff24ef01, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 097ae5674d5ccbe40aacf506ff24ef01, type: 3}
       propertyPath: m_TagString
@@ -2270,6 +2271,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1110236201763914086, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5873404661297439713, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6541855346975160667, guid: ad54db8eb0d1b044a980a941e0b9f23f, type: 3}
@@ -2630,6 +2635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 8920220176615069075, guid: ea5da3f27e75a724d987e1d1c3567530, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea5da3f27e75a724d987e1d1c3567530, type: 3}
 --- !u!1001 &8639957677278154621
@@ -2686,6 +2695,10 @@ PrefabInstance:
     - target: {fileID: 8873817956997002334, guid: 1fb597f98ceabca4eb143f6126b608dc, type: 3}
       propertyPath: m_Name
       value: EnemyBoss Ragdoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873817956997002334, guid: 1fb597f98ceabca4eb143f6126b608dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb597f98ceabca4eb143f6126b608dc, type: 3}
