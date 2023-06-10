@@ -102,7 +102,7 @@ public class AIBehaviour : MonoBehaviour
             }
             else {
                 heardPlayerAI = false;
-            }
+            } 
         }
     }
 

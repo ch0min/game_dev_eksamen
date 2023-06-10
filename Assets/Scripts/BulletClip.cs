@@ -6,6 +6,7 @@ public class BulletClip : MonoBehaviour
     public Transform bulletClipPosition;
     public float bulletForce = 1000f;
 
+    // cooldown
     public float fireRate = 0.5f;
     private float nextFiretime;
 
@@ -21,6 +22,5 @@ public class BulletClip : MonoBehaviour
         _rigidbody.AddForce(transform.right * bulletForce);
 
         Destroy(bulletHolder, 6.0f);
-        // }
     }
 }

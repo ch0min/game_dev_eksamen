@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class BulletHit : MonoBehaviour
 {
+    // particle effects.
     public GameObject bloodEffect;
     public GameObject hitEffect;
+    
     public float damage = 25f;
 
     void OnCollisionEnter(Collision collision) {
+        // tager fat i contactpoint for collision, hvor to objects collider med hinanden.
         ContactPoint contact = collision.contacts[0];
         if (collision.gameObject.CompareTag("Enemy")) {
             Enemy target = collision.transform.gameObject.GetComponent<Enemy>();

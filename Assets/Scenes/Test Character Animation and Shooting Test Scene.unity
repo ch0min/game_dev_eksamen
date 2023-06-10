@@ -424,7 +424,7 @@ Transform:
   m_Children:
   - {fileID: 1192344802}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 1, z: 1}
 --- !u!81 &184356707
 AudioListener:
@@ -771,6 +771,14 @@ PrefabInstance:
       propertyPath: bulletClipSFX
       value: 
       objectReference: {fileID: 731963330}
+    - target: {fileID: 707414245543298018, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 707414245543298018, guid: 18539f1874728ca4991d25c065938697, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 707414246030619968, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_Drag
       value: 1
@@ -817,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 731963329}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalScale.x
@@ -825,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1034566771319382958, guid: 18539f1874728ca4991d25c065938697, type: 3}
       propertyPath: m_LocalScale.z
@@ -1409,7 +1417,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &943557857
 GameObject:
@@ -1597,8 +1605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4240510926b1bf347897b5fcd757f91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadBody: {fileID: 8093275406101336142, guid: fd04c606828093c438638ab572b0a6c1, type: 3}
-  health: 100
+  deadBody: {fileID: 8093275406101336142, guid: 208d94bc358688848a8cd27bc9729107, type: 3}
+  health: 200
   WonCanvas: {fileID: 0}
   _aiBehaviour: {fileID: 1114602365}
 --- !u!114 &1114602365
@@ -2500,7 +2508,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7139444942792882573, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7139444942792882573, guid: 7e71f36a9c5f454498893e96d174251c, type: 3}
       propertyPath: m_LocalPosition.x
