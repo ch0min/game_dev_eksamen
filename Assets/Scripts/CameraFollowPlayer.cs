@@ -5,10 +5,10 @@ public class CameraFollowPlayer : MonoBehaviour
     public Transform followPlayer;
     private Transform cameraTransform;
 
-    // Defining the position of the Camera
+    // Position
     public Vector3 playerOffset;
 
-    // Speed of the Camera
+    // Lerp Speed
     public float lerpSpeed = 5f;
 
     void Start() {
@@ -16,7 +16,7 @@ public class CameraFollowPlayer : MonoBehaviour
     }
 
     void SetTarget(Transform newTransformTarget) {
-        // Updates player transform
+        // Opdaterer player transform
         followPlayer = newTransformTarget;
     }
 
